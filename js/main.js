@@ -11,6 +11,8 @@ let locationClose = document.querySelector('.header__location .close_btn');
 let locationBtn = document.querySelector('.header__location_inp');
 let locationContent = document.querySelector('.header__location_content');
 let cityInp = document.querySelector('.header__location_content .form_inp input');
+let locationSearch = document.querySelector('.header__location .location_search');
+let locationSearchList = document.querySelector('.header__location .location_search__list');
 
 if (locationBtn) {
     locationBtn.onclick = () => {
@@ -20,6 +22,21 @@ if (locationBtn) {
     locationClose.onclick = () => {
         locationEl.classList.remove('active');
     }
+
+    cityInp.oninput = () => {
+        if (cityInp.value) {
+            locationSearch.classList.add('active');
+        } else {
+            locationSearch.classList.remove('active');
+        }
+    }
+
+    locationSearchList.querySelectorAll('li').forEach(el => {
+        el.onclick = () => {
+            cityInp.value = el.textContent;
+            locationSearch.classList.remove('active');
+        }
+    })
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -77,11 +94,17 @@ if (modalClasses.length) {
     })
 }
 
+let lang = document.querySelector('.header .select_lang');
 let langItem = document.querySelectorAll('.select_lang__list li');
 let langBtn = document.querySelector('.select_lang__btn');
 
+langBtn.onclick = () => {
+    lang.classList.toggle('active');
+}
+
 langItem.forEach(el => {
     el.onclick = () => {
+        lang.classList.remove('active');
         langBtn.querySelector('input').value = el.querySelector('p').textContent;
         langBtn.querySelector('img').setAttribute('src', el.querySelector('img').getAttribute('src'));
     }
@@ -91,8 +114,13 @@ const currencyEl = document.querySelectorAll('.select_currency');
 
 if (currencyEl.length) {
     currencyEl.forEach(el => {
+        let btn = el.querySelector('.select_currency__btn')
         let currencyItem = el.querySelectorAll('.select_currency__list li');
         let currencyInp = el.querySelector('.select_currency__btn input');
+
+        btn.onclick = () => {
+            el.classList.toggle('active');
+        }
         
         currencyItem.forEach(item => {
             item.onclick = () => {
@@ -108,6 +136,7 @@ if (currencyEl.length) {
                         a.classList.remove('active');
                     }
                 })
+                el.classList.remove('active');
             }
         })
     })
@@ -499,7 +528,53 @@ if (calculation.length) {
     })
 }
 
+let headerPhone = document.querySelector('.header__phone');
+let headerPhoneBtn = document.querySelector('.header__phone_btn');
+
+headerPhoneBtn.onclick = () => {
+    headerPhone.classList.toggle('active');
+}
+
+let headerUserNameBtn = document.querySelector('.header .user-name');
+let headerUserNameContent = document.querySelector('.header .user-name__wrap');
+let headerUserNameClose = document.querySelector('.header .user-name__close');
+
+if (headerUserNameBtn) {
+    headerUserNameBtn.onclick = e => {
+        e.preventDefault();
+        headerUserNameContent.classList.toggle('active');
+    }
+
+    headerUserNameClose.onclick = () => {
+        headerUserNameContent.classList.remove('active');
+    }
+}
+
 document.addEventListener('click', event => {
+    if (headerUserNameContent && !headerUserNameContent.contains(event.target)) {
+        headerUserNameContent.classList.remove('active');
+    }
+
+    if (!locationSearch.contains(event.target)) {
+        locationSearch.classList.remove('active');
+    }
+
+    if (!headerPhone.contains(event.target)) {
+        headerPhone.classList.remove('active');
+    }
+
+    if (currencyEl.length) {
+        currencyEl.forEach(el => {
+            if (!el.contains(event.target)) {
+                el.classList.remove('active');
+            }
+        })
+    }
+
+    if (!lang.contains(event.target)) {
+        lang.classList.remove('active')
+    }
+
     if (sortBtn) {
         if (!sortBtn.contains(event.target) && !sortContent.contains(event.target)) {
             sortContent.classList.remove('active');

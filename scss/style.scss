@@ -623,7 +623,7 @@ textarea {
         .swp_btn {
             display: none;
 
-            @include media(992) {
+            @include media(576) {
                 display: none !important;
             }
 
@@ -1095,6 +1095,73 @@ textarea {
                 z-index: 1;
             }
 
+            .location_search {
+                width: 100%;
+                position: relative;
+
+                &.active {
+                    input {
+                        border-radius: 8px 8px 0 0;
+                        z-index: 5;
+                        position: relative;
+                    }
+
+                    .location_search__list {
+                        display: block;
+                    }
+                }
+                
+                input {
+                    width: 100%;
+                }
+
+                &__list {
+                    position: absolute;
+                    z-index: 4;
+                    left: 0;
+                    top: 47px;
+                    width: 100%;
+                    background: #FFF;
+                    border: 1px solid #E0E0E0;
+                    border-radius: 0 0 8px 8px;
+                    display: none;
+                    padding-right: 3px;
+                    @extend .card-shadow;
+
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        max-height: 290px;
+                        overflow-y: auto;
+
+                        &::-webkit-scrollbar {
+                            width: 5px;
+                        }
+
+                        &::-webkit-scrollbar-track {
+                            border-radius: 5px;
+                            background: transparent;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            border-radius: 5px;
+                            background: #FF973B;
+                        }
+                    }
+
+                    li {
+                        width: 100%;
+                        padding: 11px;
+                        cursor: pointer;
+                        user-select: none;
+
+                        &:hover {
+                            background: #e0e0e065;
+                        }
+                    }
+                }
+            }
+
             .date-picker {
                 width: 100%;
 
@@ -1366,6 +1433,11 @@ textarea {
         .basket-icon {
             position: relative;
             flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             span {
                 position: absolute;
@@ -1425,6 +1497,69 @@ textarea {
 
                 @include media(992) {
                     display: none;
+                }
+            }
+
+            &__wrap {
+                position: relative;
+
+                &.active {
+                    .user-name__content {
+                        display: flex;
+                    }
+                }
+            }
+
+            &__close {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                width: 24px;
+                height: 24px;
+                border: 1px solid #888888;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 10px;
+                }
+            }
+
+            &__content {
+                position: absolute;
+                right: 0;
+                bottom: -10px;
+                transform: translateY(100%);
+                z-index: 3;
+                background: #FFF;
+                @extend .card-shadow;
+                border-radius: 12px;
+                padding: 16px;
+                width: 200px;
+                display: none;
+                flex-direction: column;
+                align-items: center;
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    margin-bottom: 16px;
+                    width: 100%;
+
+                    a {
+                        font-size: 14px;
+                        line-height: 130%;
+                        text-decoration: underline;
+                    }
+                }
+
+                .btn-yellow {
+                    color: #FFF;
+                    width: 80%;
+                    height: 40px;
                 }
             }
         }
@@ -1514,7 +1649,7 @@ textarea {
             }
         }
 
-        &:hover {
+        &.active {
             .header__phone {
                 &_btn {
                     svg path {
@@ -1648,7 +1783,7 @@ textarea {
             }
         }
 
-        &:hover {
+        &.active {
             .select_currency__list {
                 display: flex;
             }
@@ -1736,7 +1871,7 @@ textarea {
             }
         }
 
-        &:hover {
+        &.active {
             .select_lang__list {
                 display: block;
             }
@@ -1801,7 +1936,7 @@ textarea {
             }
         }
 
-        &:hover {
+        &.active {
             .information {
                 &__btn {
                     color: #3AA600;
@@ -2080,6 +2215,7 @@ textarea {
 
             .navs__content {
                 display: flex;
+                z-index: 3;
             }
         }
 
@@ -3510,7 +3646,11 @@ textarea {
             align-items: center;
             width: 100%;
             justify-content: space-between;
-            margin-bottom: 16px;
+            padding-bottom: 16px;
+
+            @include media(-450) {
+                border-bottom: 1px solid #F0F0F0;
+            }
 
             div {
                 display: flex;
@@ -3539,6 +3679,11 @@ textarea {
             justify-content: space-between;
             align-items: flex-start;
             gap: 24px;
+
+            @include media(-450) {
+                border-bottom: 1px solid #F0F0F0;
+                padding-bottom: 16px;
+            }
 
             ul {
                 width: calc(50% - 12px);
@@ -4398,6 +4543,7 @@ textarea {
         @include media(992) {
             flex-direction: column;
             gap: 16px;
+            align-items: center;
         }
     }
 
@@ -4406,6 +4552,7 @@ textarea {
 
         @include media(992) {
             width: 100%;
+            // max-width: 370px;
         }
 
         &_text {
@@ -4533,6 +4680,10 @@ textarea {
         .swiper {
             height: auto;
             overflow: visible;
+
+            @include media(992) {
+                max-width: 370px;
+            }
 
             &-slide {
                 height: 550px;
@@ -4841,6 +4992,11 @@ textarea {
                     font-size: 16px;
                     line-height: 130%;
                 }
+
+                img {
+                    width: 16px;
+                    flex-shrink: 0;
+                }
             }
 
             h4 {
@@ -4873,7 +5029,7 @@ textarea {
                     background-image: url('../images/arrow-down-green.svg');
                     background-repeat: no-repeat;
                     background-position: left center;
-                    
+
                 }
             }
         }
