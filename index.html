@@ -47,7 +47,7 @@
                                 <div class="form_inp">
                                     <label for="">Куда</label>
                                     <div class="location_search">
-                                        <input type="text" placeholder="Начните вводить город...">
+                                        <input type="text" placeholder="Начните вводить город">
                                         <div class="location_search__list">
                                             <ul>
                                                 <li>город 1</li>
@@ -181,7 +181,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <button class="filter_btn filter-modal__open">
+                            <button class="filter_btn cfilter__open">
                                 <img src="./images/filter-icon.svg" alt="">
                             </button>
                             <a href="#" class="like-icon">
@@ -2117,268 +2117,540 @@
         <!-- Navs mb end -->
 
         <!-- Filter -->
-        <section class="filter">
-            <div class="filter__head">
-                <h2>Фильтр</h2>
-                <div>
-                    <button>Сбросить фильтры</button>
-                    <button class="filter__close">
-                        <img src="./images/times.svg" alt="">
-                    </button>
-                </div>
-            </div>
-            <div class="filter__body">
-                <div class="filter__item">
-                    <div class="search">
-                        <div class="form_inp">
-                            <input type="text" placeholder="Поиск">
-                        </div>
-                        <button class="search_btn">
-                            <img src="./images/search.svg" alt="">
+        <div class="categories__filter other-page">
+            <div class="categories__filter__bg"></div>
+            <div class="categories__filter_content">
+                <div class="categories__filter_head">
+                    <h3>фильтр</h3>
+                    <div>
+                        <button>Сбросить фильтры</button>
+                        <button class="categories__filter_close">
+                            <img src="./images/times.svg" alt="">
                         </button>
                     </div>
                 </div>
-                <div class="filter__item">
-                    <h3>Праздники</h3>
-                    <ul>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">День влюбленных – 14 февраля</label>
-                        </li>
-                    </ul>
+                <div class="form_range__wrap">
+                    <div class="form_range__wrap_head">
+                        <h3>Цены</h3>
+                        <div class="select_currency">
+                            <div class="select_currency__btn">
+                                <input type="text" value="РУБ" currency-icon="icon-1">
+                                <img src="./images/arrow-down.svg" alt="">
+                            </div>
+                            <ul class="select_currency__list">
+                                <li class="icon">
+                                    <img src="./images/rectangle.svg" alt="">
+                                </li>
+                                <li class="active" data-currency="РУБ">₽ Рубли</li>
+                                <li data-currency="USD">$ доллары</li>
+                                <li data-currency="EUR">€ евро</li>
+                                <li data-currency="KZT">₸ тенге</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form_range">
+                        <div class="form_range__inp">
+                            <div class="line"></div>
+                            <input value="1500" min="0" max="15000" step="1" type="range"/>
+                            <input value="12500" min="0" max="15000" step="1" type="range"/>
+                        </div>
+                        <div class="form_range__val">
+                            <div class="form_range__val_item">
+                                <span>От</span>
+                                <input class="val" type="number" value="0" min="0" max="15000" step="1">
+                                <span class="currency" currency-icon="icon-1">₽</span>
+                            </div>
+                            <div class="form_range__val_item">
+                                <span>До</span>
+                                <input class="val" type="number" value="0" min="0" max="15000" step="1">
+                                <span class="currency" currency-icon="icon-1">₽</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="filter__item">
-                    <h3>Что дарим?</h3>
-                    <ul>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Букеты</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Охапки</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Композиции</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Подарки</label>
-                        </li>
-                    </ul>
+                <div class="accordion active">
+                    <button class="accordion__btn">
+                        <span>Кому</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.7998 5.19995L7.79981 10.8L1.7998 5.19995" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="accordion__body">
+                        <ul>
+                            <li class="form_checkbox">
+                                <input type="checkbox" checked name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Жене</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Девушке</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Маме</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Подруге</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Другу</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Жене</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Девушке</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Маме</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Подруге</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Другу</label>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="filter__item">
-                    <h3>Кому</h3>
-                    <ul>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Женщине</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Мужчине</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Ребенку</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Коллеге</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Для мамы</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Для друзей</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Учителю</label>
-                        </li>
-                    </ul>
+                <div class="accordion active">
+                    <button class="accordion__btn">
+                        <span>Повод</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.7998 5.19995L7.79981 10.8L1.7998 5.19995" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="accordion__body">
+                        <ul>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">День рождения</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Рождение ребенка</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">С днем свадьбы</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">С новосельем</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">С первым учебным днем</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">День рождения</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Рождение ребенка</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">С днем свадьбы</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">С новосельем</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">С первым учебным днем</label>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="filter__item">
-                    <h3>Повод</h3>
-                    <ul>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">1 Сентября</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Новый год</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Просто так</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">День рождения</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Романтика</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Свадьба</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">VIP букеты</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Выздоравливай</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Скучаю</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Сочувствие</label>
-                        </li>
-                    </ul>
+                <div class="accordion active">
+                    <button class="accordion__btn">
+                        <span>Цветы</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.7998 5.19995L7.79981 10.8L1.7998 5.19995" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="accordion__body">
+                        <div class="form_inp">
+                            <input type="text" placeholder="Я ищу...">
+                        </div>
+                        <ul class="checkbox_wrap">
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Розы</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Хризантемы</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Гортензия</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Орхидеи</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Тюльпаны</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Экзоты</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Ирисы</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Ромашки</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Герберы</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Альстромерия</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Розы</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Хризантемы</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Гортензия</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Орхидеи</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Тюльпаны</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Экзоты</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Ирисы</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Ромашки</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Герберы</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Альстромерия</label>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="filter__item">
-                    <h3>Букеты с</h3>
-                    <ul>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Розы</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Шляпные коробки</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Кустовые розы</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Гортензия</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Сухоцветы</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Ирисы</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Герберы</label>
-                        </li>
-                        <li class="form_checkbox">
-                            <input type="checkbox" name="" id="">
-                            <span class="icon">
-                                <img src="./images/check.svg" alt="">
-                            </span>
-                            <label for="">Хризантемы</label>
-                        </li>
-                    </ul>
+                <div class="accordion active">
+                    <button class="accordion__btn">
+                        <span>Цвет</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.7998 5.19995L7.79981 10.8L1.7998 5.19995" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="accordion__body">
+                        <div class="form_inp">
+                            <input type="text" placeholder="Я ищу...">
+                        </div>
+                        <ul class="checkbox_wrap">
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Красный</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Чернный</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Желтый</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Синий</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Зеленый</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Желтый</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Синий</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Зеленый</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Фиолетовый</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Белый</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Красный</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Чернный</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Желтый</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Синий</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Зеленый</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Желтый</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Синий</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Зеленый</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Фиолетовый</label>
+                            </li>
+                            <li class="form_checkbox">
+                                <input type="checkbox" name="" id="">
+                                <span class="icon">
+                                    <img src="./images/check.svg" alt="">
+                                </span>
+                                <label for="">Белый</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="btns_wrap">
+                    <button class="btn-yellow">Показать</button>
+                    <button class="btn-yellow-border">
+                        <img src="./images/times-sm.svg" alt="">
+                        <span>Очистить фильтр</span>
+                    </button>
                 </div>
             </div>
-            <div class="filter__foot">
-                <p>152 букета найдено</p>
-                <a href="#" class="btn-yellow-border sm">показать</a>
-            </div>
-        </section>
+        </div>
         <!-- Filter end -->
 
         <main>
