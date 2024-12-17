@@ -194,8 +194,8 @@
                                 <img src="./images/basket.svg" alt="">
                                 <span>99</span>
                             </a>
-                            <!-- <a href="#" class="btn-yellow-border sm login-modal__open">Войти</a> -->
-                            <div class="user-name__wrap">
+                            <a href="#" class="btn-yellow-border sm login-modal__open">Войти</a>
+                            <!-- <div class="user-name__wrap">
                                 <a href="#" class="user-name">
                                     <span class="icon">
                                         <img src="./images/user-icon.svg" alt="">
@@ -225,7 +225,7 @@
                                     </ul>
                                     <a href="#" class="btn-yellow">ВЫЙТИ</a>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="header__content_bottom">
@@ -1304,11 +1304,30 @@
                     </li>
                 </ul>
                 <h4>Код будет отправлен на ваш WhatsApp</h4>
-                <button class="btn-yellow">получить код</button>
+                <button class="btn-yellow confirm-number__open">получить код</button>
             </div>
         </section>
         <!-- Login modal end -->
-        
+        <!-- Buy product -->
+        <section class="modal confirm-number">
+            <div class="modal__bg"></div>
+            <div class="modal__content">
+                <button type="button" class="modal__close">
+                    <img src="./images/times.svg" alt="">
+                </button>
+                <h2 class="title">Подтвердите номер</h2>
+                <h3>Введите код, отправленный на номер <b>+7(747) 490-40-85</b></h3>
+                <div class="inputs">
+                    <input type="text" class="form_inp" maxlength="1" id="input1">
+                    <input type="text" class="form_inp" maxlength="1" id="input2">
+                    <input type="text" class="form_inp" maxlength="1" id="input3">
+                    <input type="text" class="form_inp" maxlength="1" id="input4">
+                </div>
+                <a href="#" class="disabled">Не получил код 01:24</a>
+                <button class="btn-yellow">Далее</button>
+            </div>
+        </section>
+        <!-- Buy product end -->
         <!-- Modal end -->
 
         <!-- Navs -->
@@ -2678,7 +2697,10 @@
                                     <img src="./images/plus.svg" alt="">
                                 </button>
                             </div>
-                            <h4>2 717 ₽</h4>
+                            <h4>
+                                <del>2 717 ₽</del>
+                                <span>2 717 ₽</span>
+                            </h4>
                         </div>
                     </div>
                 </div>
@@ -2867,7 +2889,10 @@
                             </h4>
                         </div>
                         <div class="product__right_price">
-                            <h3>3 500 ₽</h3>
+                            <h3>
+                                <span>3 500 ₽</span>
+                                <del>3 500 ₽</del>
+                            </h3>
                             <p>накопите <span>396 ₽ (10%)</span></p>
                         </div>
                         <a href="" class="btn-yellow">
@@ -3877,7 +3902,7 @@
 
     </div>
 
-    <script src="https://unpkg.com/imask"></script>
+    <script src="./js/imask.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- JS file -->

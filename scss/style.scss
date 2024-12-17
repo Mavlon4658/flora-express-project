@@ -31,6 +31,10 @@ textarea {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 5%);
 }
 
+.hidden {
+    display: none !important;
+}
+
 .btn {
     &-yellow {
         display: inline-flex;
@@ -3638,6 +3642,10 @@ textarea {
                 font-size: 14px;
                 line-height: 20px;
                 color: #888888;
+
+                &:hover {
+                    color: #2E2E2E;
+                }
             }
         }
 
@@ -3699,6 +3707,10 @@ textarea {
                 display: flex;
                 align-items: center;
                 gap: 0px;
+
+                img {
+                    width: 18px;
+                }
             }
 
             .tel-link {
@@ -3735,6 +3747,7 @@ textarea {
                 display: flex;
                 align-items: center;
                 gap: 4px;
+                padding: 5px 0;
 
                 &_text {
                     font-size: 16px;
@@ -4856,6 +4869,7 @@ textarea {
                 display: flex;
                 align-items: center;
                 gap: 8px;
+                justify-content: space-between;
 
                 &:last-child {
                     gap: 5px;
@@ -5244,9 +5258,19 @@ textarea {
                 line-height: 120%;
                 margin-bottom: 8px;
                 color: black;
+                display: flex;
+                align-items: flex-end;
+                gap: 8px;
 
                 @include media(992) {
                     font-size: 24px;
+                }
+
+                del {
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 160%;
+                    color: #888888;
                 }
             }
 
@@ -5718,6 +5742,16 @@ textarea {
                 line-height: 130%;
                 font-weight: bold;
                 flex-shrink: 0;
+                display: flex;
+                align-items: flex-end;
+                gap: 8px;
+
+                del {
+                    font-weight: 500;
+                    color: #888;
+                    font-size: 12px;
+                    line-height: 155%;
+                }
             }
         }
     }
@@ -5735,3 +5769,67 @@ textarea {
     }
 }
 // Buy product modal end
+
+// Confirm number
+.confirm-number {
+    .modal__content {
+        width: 380px;
+    }
+
+    .inputs {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        gap: 18px;
+        margin: 20px 0;
+    }
+
+    h2 {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 120%;
+        margin-bottom: 24px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    input {
+        font-size: 18px;
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+        padding: 0;
+        text-align: center;
+        border: 1px solid #E0E0E0;
+        border-radius: 8px;
+
+        &:hover, &.valid {
+            border-color: #888888;
+        }
+
+        &:focus {
+            border-color: #3AA600;
+        }
+
+        &.error {
+            border-color: #F53E63;
+        }
+    }
+
+    a {
+        font-size: 16px;
+        margin-bottom: 24px;
+        
+        &.disabled {
+            color: #888888;
+            pointer-events: none;
+        }
+    }
+
+    .btn-yellow {
+        width: 100%;
+    }
+}
+// Confirm number end

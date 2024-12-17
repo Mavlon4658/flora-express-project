@@ -1304,10 +1304,30 @@
                     </li>
                 </ul>
                 <h4>Код будет отправлен на ваш WhatsApp</h4>
-                <button class="btn-yellow">получить код</button>
+                <button class="btn-yellow confirm-number__open">получить код</button>
             </div>
         </section>
         <!-- Login modal end -->
+        <!-- Buy product -->
+        <section class="modal confirm-number">
+            <div class="modal__bg"></div>
+            <div class="modal__content">
+                <button type="button" class="modal__close">
+                    <img src="./images/times.svg" alt="">
+                </button>
+                <h2 class="title">Подтвердите номер</h2>
+                <h3>Введите код, отправленный на номер <b>+7(747) 490-40-85</b></h3>
+                <div class="inputs">
+                    <input type="text" class="form_inp" maxlength="1" id="input1">
+                    <input type="text" class="form_inp" maxlength="1" id="input2">
+                    <input type="text" class="form_inp" maxlength="1" id="input3">
+                    <input type="text" class="form_inp" maxlength="1" id="input4">
+                </div>
+                <a href="#" class="disabled">Не получил код 01:24</a>
+                <button class="btn-yellow">Далее</button>
+            </div>
+        </section>
+        <!-- Buy product end -->
         <!-- Modal end -->
 
         <!-- Navs -->
@@ -4344,7 +4364,7 @@
 
     </div>
 
-    <script src="https://unpkg.com/imask"></script>
+    <script src="./js/imask.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- JS file -->

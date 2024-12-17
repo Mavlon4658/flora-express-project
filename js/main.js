@@ -44,6 +44,34 @@ if (locationBtn) {
     })
 }
 
+const inputs = document.querySelectorAll('.confirm-number .inputs input');
+
+if (inputs.length) {
+    inputs.forEach((input, index) => {
+        input.addEventListener('input', (e) => {
+            if (e.target.value.length === 1) {
+                if (index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+            }
+
+            if (input.value) {
+                input.classList.add('valid');
+            } else {
+                input.classList.remove('valid');
+            }
+        });
+    
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Backspace' && e.target.value === '') {
+                if (index > 0) {
+                    inputs[index - 1].focus();
+                }
+            }
+        });
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const datePicker = document.querySelectorAll('.date-picker');
 
@@ -71,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-const modalClasses = ['.login-modal', '.buy-product-modal'];
+const modalClasses = ['.login-modal', '.buy-product-modal', '.confirm-number'];
 
 if (modalClasses.length) {
     modalClasses.forEach(cls => {
@@ -83,6 +111,9 @@ if (modalClasses.length) {
         if (modalOpen.length) {
             modalOpen.forEach(el => {
                 el.onclick = e => {
+                    document.querySelectorAll('.modal').forEach(clos => {
+                        clos.classList.remove('active');
+                    })
                     e.preventDefault();
                     modal.classList.add('active');
                     bodyHidden();
@@ -321,24 +352,6 @@ if (navsContent.length) {
     })
 }
 
-// const filterModal = document.querySelector('section.filter');
-// const filterModalOpen = document.querySelectorAll('.filter-modal__open');
-// const filterModalClose = document.querySelector('.filter .categories__filter_close');
-
-// if (filterModalOpen.length) {
-//     filterModalOpen.forEach(el => {
-//         el.onclick = e => {
-//             e.preventDefault();
-//             filterModal.classList.add('active');
-//             bodyHidden();
-//         }
-//     })
-//     filterModalClose.onclick = () => {
-//         filterModal.classList.remove('active');
-//         bodyVisible();
-//     }
-// }
-
 const mobileMenu = document.querySelector('.mobile-menu');
 const mobileMenuOpen = document.querySelector('.mobile-menu__open');
 const mobileMenuClose = document.querySelector('.mobile-menu__close');
@@ -518,7 +531,7 @@ const phoneInp = document.querySelectorAll('.form_inp input[type="tel"]');
 if (phoneInp.length) {
     phoneInp.forEach(el => {
         IMask(el, {
-            mask: '+{7}(000)000-00-00',
+            mask: '+{7}(000) 000-00-00',
         })
     });
 }
