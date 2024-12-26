@@ -194,8 +194,8 @@
                                 <img src="./images/basket.svg" alt="">
                                 <span>99</span>
                             </a>
-                            <a href="#" class="btn-yellow-border sm login-modal__open">Войти</a>
-                            <!-- <div class="user-name__wrap">
+                            <!-- <a href="#" class="btn-yellow-border sm login-modal__open">Войти</a> -->
+                            <div class="user-name__wrap">
                                 <a href="#" class="user-name">
                                     <span class="icon">
                                         <img src="./images/user-icon.svg" alt="">
@@ -203,6 +203,7 @@
                                     <span class="text">Иван Константино...</span>
                                 </a>
                                 <div class="user-name__content">
+                                    <img src="./images/rectangle.svg" alt="" class="icon">
                                     <button class="user-name__close">
                                         <img src="./images/times.svg" alt="">
                                     </button>
@@ -225,18 +226,18 @@
                                     </ul>
                                     <a href="#" class="btn-yellow">ВЫЙТИ</a>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                     <div class="header__content_bottom">
                         <div class="information">
                             <button class="information__btn">
+                                <span>Информация</span>
                                 <span class="icon">
                                     <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1.2002 1.69995L7.20019 7.29995L13.2002 1.69995" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </span>
-                                <span>Информация</span>
                             </button>
                             <ul class="information__list">
                                 <li class="icon">
@@ -1316,15 +1317,26 @@
                     <img src="./images/times.svg" alt="">
                 </button>
                 <h2 class="title">Подтвердите номер</h2>
-                <h3>Введите код, отправленный на номер <b>+7(747) 490-40-85</b></h3>
+                <div class="description">
+                    <div class="icon">
+                        <img src="./images/whatsapp-icon.svg" alt="">
+                        <!-- <img src="./images/msg-icon.svg" alt=""> -->
+                        <!-- <img src="./images/sms-icon.svg" alt=""> -->
+                    </div>
+                    <p>
+                        Мы отправили код подтверждения в мессенджер WhatsApp на номер
+                        <b>+7 ( 747 ) 490-40-85</b> <button>Изменить</button>
+                    </p>
+                </div>
                 <div class="inputs">
                     <input type="text" class="form_inp" maxlength="1" id="input1">
                     <input type="text" class="form_inp" maxlength="1" id="input2">
                     <input type="text" class="form_inp" maxlength="1" id="input3">
                     <input type="text" class="form_inp" maxlength="1" id="input4">
                 </div>
-                <a href="#" class="disabled">Не получил код 01:24</a>
-                <button class="btn-yellow">Далее</button>
+                <a href="#">Получить новый код можно через <b>02:43</b></a>
+                <a href="#" class="text-green">Запросить СМС-код</a>
+                <a href="#" class="text-green">Не могу войти</a>
             </div>
         </section>
         <!-- Buy product end -->
@@ -2711,33 +2723,25 @@
                                         <li>
                                             <a href="#">
                                                 <span>Популярности</span>
-                                                <span class="icon">
-                                                    <img src="./images/times-sm.svg" alt="">
-                                                </span>
+                                                <img src="./images/arrow-up-green.svg" alt="">
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" class="active">
                                                 <span>Цене</span>
-                                                <span class="icon">
-                                                    <img src="./images/times-sm.svg" alt="">
-                                                </span>
+                                                <img src="./images/arrow-up-green.svg" alt="">
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <span>Скидке</span>
-                                                <span class="icon">
-                                                    <img src="./images/times-sm.svg" alt="">
-                                                </span>
+                                                <img src="./images/arrow-up-green.svg" alt="">
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <span>Обновлению</span>
-                                                <span class="icon">
-                                                    <img src="./images/times-sm.svg" alt="">
-                                                </span>
+                                                <img src="./images/arrow-up-green.svg" alt="">
                                             </a>
                                         </li>
                                     </ul>
@@ -3493,7 +3497,7 @@
                     </ul>
                     <div class="footer__bottom_item">
                         <p>Текущий рейтинг</p>
-                        <h4>4,74 из 5 <span>1161 отзывов</span></h4>
+                        <h4>4,74 из 5 <span>(1161 отзывов)</span></h4>
                         <div class="stars">
                             <img src="./images/star.png" alt="">
                             <img src="./images/star.png" alt="">
@@ -3516,7 +3520,7 @@
                         <p>Текущий рейтинг</p>
                         <div class="stars">
                             <img src="./images/star.png" width="18" alt="">
-                            <div class="stars_text">4,74 из 5 <span>1161 отзывов</span></div>
+                            <div class="stars_text">4,74 из 5 <span>(1161 отзывов)</span></div>
                         </div>
                     </div>
                     <a href="#">Оцените нас</a>

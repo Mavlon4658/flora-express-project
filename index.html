@@ -194,8 +194,8 @@
                                 <img src="./images/basket.svg" alt="">
                                 <span>99</span>
                             </a>
-                            <a href="#" class="btn-yellow-border sm login-modal__open">Войти</a>
-                            <!-- <div class="user-name__wrap">
+                            <!-- <a href="#" class="btn-yellow-border sm login-modal__open">Войти</a> -->
+                            <div class="user-name__wrap">
                                 <a href="#" class="user-name">
                                     <span class="icon">
                                         <img src="./images/user-icon.svg" alt="">
@@ -203,6 +203,7 @@
                                     <span class="text">Иван Константино...</span>
                                 </a>
                                 <div class="user-name__content">
+                                    <img src="./images/rectangle.svg" alt="" class="icon">
                                     <button class="user-name__close">
                                         <img src="./images/times.svg" alt="">
                                     </button>
@@ -225,18 +226,18 @@
                                     </ul>
                                     <a href="#" class="btn-yellow">ВЫЙТИ</a>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                     <div class="header__content_bottom">
                         <div class="information">
                             <button class="information__btn">
+                                <span>Информация</span>
                                 <span class="icon">
                                     <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1.2002 1.69995L7.20019 7.29995L13.2002 1.69995" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </span>
-                                <span>Информация</span>
                             </button>
                             <ul class="information__list">
                                 <li class="icon">
@@ -1316,15 +1317,26 @@
                     <img src="./images/times.svg" alt="">
                 </button>
                 <h2 class="title">Подтвердите номер</h2>
-                <h3>Введите код, отправленный на номер <b>+7(747) 490-40-85</b></h3>
+                <div class="description">
+                    <div class="icon">
+                        <img src="./images/whatsapp-icon.svg" alt="">
+                        <!-- <img src="./images/msg-icon.svg" alt=""> -->
+                        <!-- <img src="./images/sms-icon.svg" alt=""> -->
+                    </div>
+                    <p>
+                        Мы отправили код подтверждения в мессенджер WhatsApp на номер
+                        <b>+7 ( 747 ) 490-40-85</b> <button>Изменить</button>
+                    </p>
+                </div>
                 <div class="inputs">
                     <input type="text" class="form_inp" maxlength="1" id="input1">
                     <input type="text" class="form_inp" maxlength="1" id="input2">
                     <input type="text" class="form_inp" maxlength="1" id="input3">
                     <input type="text" class="form_inp" maxlength="1" id="input4">
                 </div>
-                <a href="#" class="disabled">Не получил код 01:24</a>
-                <button class="btn-yellow">Далее</button>
+                <a href="#">Получить новый код можно через <b>02:43</b></a>
+                <a href="#" class="text-green">Запросить СМС-код</a>
+                <a href="#" class="text-green">Не могу войти</a>
             </div>
         </section>
         <!-- Buy product end -->
@@ -2781,15 +2793,23 @@
                                         <img src="./images/star.svg" alt="">
                                         <span>4.89</span>
                                     </div>
-                                    <h4>oт 2 717 ₽</h4>
+                                    <h4>
+                                        <del>от 3 400</del>
+                                        <span>oт 2 717 ₽</span>
+                                    </h4>
                                 </div>
                                 <div class="like">
-                                    <button class="like-btn">
-                                        <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M13.9205 2.06089C13.5784 1.72455 13.1722 1.45775 12.7252 1.27572C12.2782 1.09369 11.799 1 11.3151 1C10.8312 1 10.3521 1.09369 9.90504 1.27572C9.45801 1.45775 9.05185 1.72455 8.70976 2.06089L7.99982 2.75857L7.28988 2.06089C6.5989 1.38184 5.66172 1.00035 4.68453 1.00035C3.70733 1.00035 2.77016 1.38184 2.07917 2.06089C1.38819 2.73994 1 3.66092 1 4.62124C1 5.58157 1.38819 6.50255 2.07917 7.1816L2.78911 7.87928L7.99982 13L13.2105 7.87928L13.9205 7.1816C14.2627 6.84543 14.5342 6.44628 14.7194 6.00697C14.9047 5.56765 15 5.09678 15 4.62124C15 4.14571 14.9047 3.67484 14.7194 3.23552C14.5342 2.79621 14.2627 2.39706 13.9205 2.06089Z" fill="white" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </button>
                                     <h5 class="active">В наличии</h5>
+                                    <div>
+                                        <button class="like-btn">
+                                            <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.9205 2.06089C13.5784 1.72455 13.1722 1.45775 12.7252 1.27572C12.2782 1.09369 11.799 1 11.3151 1C10.8312 1 10.3521 1.09369 9.90504 1.27572C9.45801 1.45775 9.05185 1.72455 8.70976 2.06089L7.99982 2.75857L7.28988 2.06089C6.5989 1.38184 5.66172 1.00035 4.68453 1.00035C3.70733 1.00035 2.77016 1.38184 2.07917 2.06089C1.38819 2.73994 1 3.66092 1 4.62124C1 5.58157 1.38819 6.50255 2.07917 7.1816L2.78911 7.87928L7.99982 13L13.2105 7.87928L13.9205 7.1816C14.2627 6.84543 14.5342 6.44628 14.7194 6.00697C14.9047 5.56765 15 5.09678 15 4.62124C15 4.14571 14.9047 3.67484 14.7194 3.23552C14.5342 2.79621 14.2627 2.39706 13.9205 2.06089Z" fill="white" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </button>
+                                        <a href="#">
+                                            <img src="./images/basket-icon.svg" alt="">
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -3846,8 +3866,8 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="swp_pagination"></div>
                     </div>
+                    <div class="swp_pagination"></div>
                     <a href="#" class="btn-yellow-border mobile">все отзывы</a>
                 </div>
             </section>
@@ -4076,7 +4096,7 @@
                             <p class="buy__description">Подпишитесь на эксклюзивные предложения. Без спама. </p>
                             <div class="form_group">
                                 <div class="form_inp">
-                                    <input type="text" placeholder="Введите почту">
+                                    <input type="email" placeholder="Введите почту">
                                 </div>
                                 <button class="btn-yellow">Подписаться</button>
                             </div>
@@ -4159,10 +4179,7 @@
                             <a href="#">Гарантия качества</a>
                         </li>
                         <li>
-                            <a href="#">Политика обработки</a>
-                        </li>
-                        <li>
-                            <a href="#">персональных данных</a>
+                            <a href="#">Политика обработки персональных данных</a>
                         </li>
                         <li>
                             <a href="#">Скидки</a>
@@ -4239,11 +4256,11 @@
                         <p>Текущий рейтинг</p>
                         <h4>4,74 из 5 <span>(1161 отзывов)</span></h4>
                         <div class="stars">
-                            <img src="./images/star.svg" alt="">
-                            <img src="./images/star.svg" alt="">
-                            <img src="./images/star.svg" alt="">
-                            <img src="./images/star.svg" alt="">
-                            <img src="./images/star.svg" alt="">
+                            <img src="./images/star.png" alt="">
+                            <img src="./images/star.png" alt="">
+                            <img src="./images/star.png" alt="">
+                            <img src="./images/star.png" alt="">
+                            <img src="./images/star.png" alt="">
                         </div>
                         <a href="#">Оцените нас</a>
                     </div>
@@ -4259,9 +4276,7 @@
                     <div>
                         <p>Текущий рейтинг</p>
                         <div class="stars">
-                            <svg width="18" height="28" viewBox="0 0 18 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7.49787 7.59003C7.87671 6.68128 9.16412 6.68128 9.54296 7.59003L10.5795 10.0765C10.7364 10.4527 11.0872 10.7124 11.4928 10.7526L14.1608 11.0171C15.1133 11.1115 15.5059 12.288 14.8009 12.9355L12.7307 14.8368C12.4417 15.1023 12.3146 15.5009 12.3968 15.8847L12.9868 18.6401C13.1909 19.5929 12.1541 20.326 11.3238 19.8161L9.10015 18.4506C8.74451 18.2322 8.29632 18.2322 7.94068 18.4506L5.71701 19.8161C4.88671 20.326 3.84997 19.5929 4.05398 18.6401L4.64401 15.8847C4.72619 15.5009 4.59917 15.1023 4.31011 14.8368L2.23995 12.9355C1.53498 12.288 1.92754 11.1115 2.88006 11.0171L5.54803 10.7526C5.95367 10.7124 6.30446 10.4527 6.46131 10.0765L7.49787 7.59003Z" fill="#3AA600"/>
-                            </svg>
+                            <img src="./images/star.png" width="18" alt="">
                             <div class="stars_text">4,74 из 5 <span>(1161 отзывов)</span></div>
                         </div>
                     </div>
