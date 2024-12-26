@@ -1939,6 +1939,9 @@ textarea {
   flex-direction: column;
   gap: 8px;
 }
+.mobile-menu .btns_wrap .d-block {
+  display: block !important;
+}
 .mobile-menu .btns_wrap a {
   width: 100%;
   display: flex;
@@ -3662,10 +3665,8 @@ textarea {
   align-items: stretch;
   gap: 16px;
 }
-@media screen and (min-width: 992px) {
-  .categories__filter_content .btns_wrap .btn-yellow {
-    display: none !important;
-  }
+.categories__filter_content .btns_wrap.flex-col {
+  flex-direction: column;
 }
 .categories__filter_content .btns_wrap .btn-yellow,
 .categories__filter_content .btns_wrap .btn-yellow-border {
@@ -5734,18 +5735,18 @@ textarea {
   outline: none;
   border-radius: 15px;
   height: 4px;
-  background: #D9D9D9;
+  background: #d9d9d9;
 }
 .order-form .selec-date .time {
   font-weight: 700;
-  color: #2E2E2E;
+  color: #2e2e2e;
 }
 .order-form .selec-date input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   height: 16px;
   width: 16px;
-  background-color: #3AA600;
+  background-color: #3aa600;
   border-radius: 50%;
   border: none;
   -webkit-transition: 0.2s ease-in-out;
@@ -5754,7 +5755,7 @@ textarea {
 .order-form .selec-date input[type=range]::-moz-range-thumb {
   height: 15px;
   width: 15px;
-  background-color: #3AA600;
+  background-color: #3aa600;
   border-radius: 50%;
   border: none;
   -moz-transition: 0.2s ease-in-out;

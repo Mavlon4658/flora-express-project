@@ -786,22 +786,7 @@ addPromoCode.addEventListener("click", (e) => {
 });
 
 
-const selecDateSwiper = new Swiper('.selec-date__swiper', {
-  slidesPerView: 5,
-  spaceBetween: 7,
-  navigation: {
-    nextEl: '.next-btn',
-    prevEl: '.prev-btn',
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 3,
-    },
-    500: {
-      slidesPerView: 5,
-    }
-  }
-})
+
 
 const selecDateSlider = document.querySelector(".selec-date__swiper");
 if (selecDateSlider) {
@@ -823,6 +808,7 @@ if (selectDelivery) {
   const deliveryBox = selectDelivery.querySelectorAll(".delivery-box");
   deliveryBox.forEach(item => {
     item.addEventListener("click", () => {
+      tooltip.classList.remove("show");
       deliveryBox.forEach(el => {
         el.classList.remove("active");
       })
@@ -871,5 +857,123 @@ if (sliderEl) {
 
     const progress = (sliderValue / sliderEl.max) * 100;
     sliderEl.style.background = `linear-gradient(to right, #8abf6d ${progress}%, #ccc ${progress}%)`;
+  });
+}
+
+
+
+const tooltipDate = document.querySelector("#tooltip-date");
+if (tooltipDate) {
+
+  const swiperWrapper = document.querySelector('.swiper-wrapper');
+
+  function generateFullCalendar() {
+    const today = new Date();
+    const startYear = today.getFullYear() - 2;
+    const endYear = today.getFullYear() + 2;
+    let todayIndex = 0;
+
+    let currentIndex = 0;
+    for (let year = startYear; year <= endYear; year++) {
+      for (let month = 0; month < 12; month++) {
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        for (let day = 1; day <= daysInMonth; day++) {
+          const date = new Date(year, month, day);
+
+          if (isSameDay(date, today)) {
+            todayIndex = currentIndex;
+          }
+
+          createSlide(date, today);
+          currentIndex++;
+        }
+      }
+    }
+
+    initializeSwiper(todayIndex);
+  }
+
+  function createSlide(date, today) {
+    const swiperSlide = document.createElement('div');
+    swiperSlide.classList.add('swiper-slide');
+
+    const dateDiv = document.createElement('div');
+    dateDiv.classList.add('date');
+
+    if (isSameDay(date, today)) {
+      dateDiv.classList.add('active');
+    }
+
+    const label = getLabel(date, today);
+
+    dateDiv.innerHTML = `
+    <span>${label}</span>
+    <h5>${date.getDate()}</h5>
+    <span>${getMonthName(date)}</span>
+  `;
+
+    swiperSlide.appendChild(dateDiv);
+    swiperWrapper.appendChild(swiperSlide);
+  }
+
+  function getLabel(date, today) {
+    if (isSameDay(date, today)) {
+      return 'Сегодня';
+    } else if (isSameDay(date, new Date(today.getTime() + 86400000))) {
+      return 'Завтра';
+    }
+    return '';
+  }
+
+  function getMonthName(date) {
+    const monthNames = [
+      'Янв', 'Фев', 'Март', 'Апр', 'Май', 'Июнь',
+      'Июль', 'Авг', 'Сент', 'Окт', 'Ноя', 'Дек'
+    ];
+    return monthNames[date.getMonth()];
+  }
+
+  function isSameDay(date1, date2) {
+    return (
+      date1.getDate() === date2.getDate() &&
+      date1.getMonth() === date2.getMonth() &&
+      date1.getFullYear() === date2.getFullYear()
+    );
+  }
+
+
+  function initializeSwiper(initialIndex) {
+    const selecDateSwiper = new Swiper('.selec-date__swiper', {
+      slidesPerView: 5,
+      spaceBetween: 7,
+      initialSlide: initialIndex,
+      navigation: {
+        nextEl: '.next-btn',
+        prevEl: '.prev-btn',
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 3,
+        },
+        500: {
+          slidesPerView: 5,
+        },
+      },
+    });
+  }
+
+
+  generateFullCalendar();
+
+
+  const swiperSlides = document.querySelectorAll('.swiper-slide');
+
+  swiperSlides.forEach(slide => {
+    slide.addEventListener('click', () => {
+      swiperSlides.forEach(slide => slide.querySelector('.date').classList.remove('active'));
+      slide.querySelector('.date').classList.add('active');
+      tooltip.classList.remove("show");
+    });
   });
 }
