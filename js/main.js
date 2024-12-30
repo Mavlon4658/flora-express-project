@@ -101,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     datePicker.forEach((el, elId) => {
       const inp = el.querySelector('.date-input');
       const pickerEl = el.querySelector('.flatpickr');
+
       flatpickr(pickerEl, {
         locale: 'ru',
         dateFormat: '\\Da\\y picke\\d: Y/m/d',
@@ -438,11 +439,12 @@ if (accordions.length) {
     if (item.classList.contains('active')) {
       content.style.maxHeight = content.scrollHeight + 'px';
     }
-
-    header.addEventListener('click', () => {
-      item.classList.toggle('active')
-      content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + 'px';
-    });
+    if (header) {
+      header.addEventListener('click', () => {
+        item.classList.toggle('active')
+        content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + 'px';
+      });
+    }
   });
 }
 
@@ -655,10 +657,12 @@ const optionsContainer = document.querySelector(".payment-select .payment-select
 const options = document.querySelectorAll(".payment-select .payment-select__option");
 const arrow = document.querySelector(".selected-box .arrow");
 
-selectedBox.addEventListener("click", () => {
-  optionsContainer.classList.toggle("show");
-  arrow.classList.toggle("active");
-});
+if (selectedBox) {
+  selectedBox.addEventListener("click", () => {
+    optionsContainer.classList.toggle("show");
+    arrow.classList.toggle("active");
+  });
+}
 
 options.forEach(option => {
   option.addEventListener("click", () => {
@@ -740,8 +744,17 @@ document.addEventListener('click', event => {
       }
     })
   }
-  if (!selectDateContainer.contains(event.target)) {
-    tooltip.classList.remove("show");
+  if (selectDateContainer) {
+    if (!selectDateContainer.contains(event.target)) {
+      tooltip.classList.remove("show");
+    }
+  }
+  const dateBox = document.querySelector(".date-box .header__location_content");
+  const dateBoxParent = document.querySelector(".date-box");
+  if (!dateBoxParent.contains(event.target)) {
+    dateBox.classList.remove("active");
+    console.log(dateBox.classList.contains("active"));
+
   }
 })
 
@@ -776,14 +789,16 @@ const addPromoCode = document.querySelector(".add-promocode");
 const promocodeInput = document.querySelector("#promocode-input");
 
 
-addPromoCode.addEventListener("click", (e) => {
-  promocodeInput.classList.toggle("show");
-  if (e.target.textContent === "+ Добавить") {
-    e.target.textContent = "Применить"
-  } else {
-    e.target.textContent = "+ Добавить"
-  }
-});
+if (addPromoCode) {
+  addPromoCode.addEventListener("click", (e) => {
+    promocodeInput.classList.toggle("show");
+    if (e.target.textContent === "+ Добавить") {
+      e.target.textContent = "Применить"
+    } else {
+      e.target.textContent = "+ Добавить"
+    }
+  });
+}
 
 
 
@@ -976,4 +991,38 @@ if (tooltipDate) {
       tooltip.classList.remove("show");
     });
   });
+}
+const pickerBox = document.querySelector(".picker-box");
+if (pickerBox) {
+  const locationBox = document.querySelector(".date-box .header__location_content");
+  const inputField = pickerBox.querySelector("input[type='tel']");
+  const datePicker = document.querySelector('#inline_picked_date2');
+
+  pickerBox.addEventListener("click", () => {
+    locationBox.classList.toggle("active");
+  });
+
+  datePicker.addEventListener('change', () => {
+    inputField.value = datePicker.value;
+  });
+}
+const accordions2 = document.querySelectorAll(".accordion");
+
+if (accordions2.length) {
+  let currentAccordion = accordions2[0];
+  accordions2.forEach(item => {
+    const accordionHeader = item.querySelector(".accordion-header");
+    const accordionContent = item.querySelector(".accordion-content");
+    accordionHeader.addEventListener("click", () => {
+      if (item !== currentAccordion) {
+        currentAccordion.querySelector(".accordion-content").classList.remove("show");
+        currentAccordion.querySelector(".accordion-header").classList.remove("active");
+        currentAccordion = item;
+      }
+      accordionContent.classList.toggle("show");
+      accordionHeader.classList.toggle("active");
+    });
+  });
+  currentAccordion.querySelector(".accordion-content").classList.add("show");
+  currentAccordion.querySelector(".accordion-header").classList.add("active");
 }
