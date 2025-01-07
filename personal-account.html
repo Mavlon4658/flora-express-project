@@ -2184,9 +2184,67 @@
         <div class="container">
           <h2 class="sec-title">Личный кабинет</h2>
           <ul class="tabs">
-            <li class="tab-item" data-tab="1">Главная</li>
-            <li class="tab-item active" data-tab="2">История заказов</li>
+            <li class="tab-item active" data-tab="1">Главная</li>
+            <li class="tab-item" data-tab="2">История заказов</li>
           </ul>
+          <div class=" tab-content show">
+            <div class="order-history">
+              <div class="order-form">
+                <h3 class="order-history__title">Личная информация</h3>
+                <form class="order-form">
+                  <div class="input-boxes">
+                    <div class="input-box">
+                      <label class="form-label">Имя, фамилия</label>
+                      <input class="form-input" type="text" name="name">
+                    </div>
+                    <div class="input-box date-box">
+                      <label class="form-label">День рождения</label>
+                      <div class="picker-box">
+                        <input class="form-input" type="tel" name="tel" placeholder="ДД.ММ.ГГГГ" id="date-input">
+                        <img src="images/calendar.svg" alt="">
+                      </div>
+                      <div class="header__location_content">
+                        <div class="date-picker">
+                          <input id="inline_picked_date2" type="text">
+                          <div class="flatpickr" data-inline="true" data-altInput="#inline_picked_date2">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <div class="selects">
+                  <label>Пол</label>
+                  <label class="form-label" for="woman">
+                    <input type="radio" name="gender" id="woman">
+                    Женский
+                  </label>
+                  <label class="form-label" for="man">
+                    <input type="radio" name="gender" id="man">
+                    Мужской
+                  </label>
+                  <label class="form-label" for="specify">
+                    <input type="radio" name="gender" id="specify" checked>
+                    Не указывать
+                  </label>
+                </div>
+              </div>
+              <div class="order-form">
+                <h3 class="order-history__title">Рассылки и скидка</h3>
+                <div class="selects">
+                  <label class="form-label" for="foto">
+                    <input type="checkbox" id="foto" checked>
+                    Присылать на email
+                  </label>
+                  <label class="form-label" for="foto2">
+                    <input type="checkbox" id="foto2">
+                    Присылать на телефон
+                  </label>
+                </div>
+              </div>
+              <button class="btn-yellow">сохранить</button>
+            </div>
+          </div>
           <div class="tab-content">
             <div class="home">
               <div class="product-card">
@@ -2463,64 +2521,6 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class=" tab-content show">
-            <div class="order-history">
-              <div class="order-form">
-                <h3 class="order-history__title">Личная информация</h3>
-                <form class="order-form">
-                  <div class="input-boxes">
-                    <div class="input-box">
-                      <label class="form-label">Имя, Фамилия</label>
-                      <input class="form-input" type="text" name="name">
-                    </div>
-                    <div class="input-box date-box">
-                      <label class="form-label">День рождения</label>
-                      <div class="picker-box">
-                        <input class="form-input" type="tel" name="tel" value="mm/dd/yyyy" id="date-input">
-                        <img src="images/calendar.svg" alt="">
-                      </div>
-                      <div class="header__location_content">
-                        <div class="date-picker">
-                          <input id="inline_picked_date2" type="text">
-                          <div class="flatpickr" data-inline="true" data-altInput="#inline_picked_date2">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-                <div class="selects">
-                  <label>Пол</label>
-                  <label class="form-label" for="woman">
-                    <input type="radio" name="gender" id="woman">
-                    Женский
-                  </label>
-                  <label class="form-label" for="man">
-                    <input type="radio" name="gender" id="man">
-                    Мужской
-                  </label>
-                  <label class="form-label" for="specify">
-                    <input type="radio" name="gender" id="specify" checked>
-                    Не указывать
-                  </label>
-                </div>
-              </div>
-              <div class="order-form">
-                <h3 class="order-history__title">Рассылки и скидка</h3>
-                <div class="selects">
-                  <label class="form-label" for="foto">
-                    <input type="checkbox" id="foto" checked>
-                    Присылать на email
-                  </label>
-                  <label class="form-label" for="foto2">
-                    <input type="checkbox" id="foto2">
-                    Присылать на телефон
-                  </label>
-                </div>
-              </div>
-              <button class="btn-yellow">сохранить</button>
             </div>
           </div>
         </div>

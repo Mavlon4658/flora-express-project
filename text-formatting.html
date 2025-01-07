@@ -1,0 +1,3177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flora Express</title>
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Date picker -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+  <!-- CSS file -->
+  <link rel="stylesheet" href="./scss/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container header__container">
+        <div class="header__left">
+          <button class="bars mobile-menu__open">
+            <img src="./images/bars.svg" alt="">
+          </button>
+          <a href="/" class="header__logo">
+            <img src="./images/logo.svg" alt="">
+            <img src="./images/logo-mb.svg" alt="" class="mb">
+          </a>
+        </div>
+        <div class="header__content">
+          <div class="header__content_top">
+            <div class="header__location">
+              <div class="header__location_inp">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14 6.72727C14 11.1818 8 15 8 15C8 15 2 11.1818 2 6.72727C2 5.20831 2.63214 3.75155 3.75736 2.67748C4.88258 1.60341 6.4087 1 8 1C9.5913 1 11.1174 1.60341 12.2426 2.67748C13.3679 3.75155 14 5.20831 14 6.72727Z"
+                    stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M8 8.63636C9.10457 8.63636 10 7.78163 10 6.72727C10 5.67291 9.10457 4.81818 8 4.81818C6.89543 4.81818 6 5.67291 6 6.72727C6 7.78163 6.89543 8.63636 8 8.63636Z"
+                    stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <input type="text" placeholder="Город доставки и дата" value="">
+                <img src="./images/arrow-down.svg" alt="">
+              </div>
+              <div class="header__location_content">
+                <button type="button" class="close_btn">
+                  <img src="./images/times.svg" alt="">
+                </button>
+                <div class="form_inp">
+                  <label for="">Куда</label>
+                  <div class="location_search">
+                    <input type="text" placeholder="Начните вводить город">
+                    <div class="location_search__list">
+                      <ul>
+                        <li>город 1</li>
+                        <li>город 2</li>
+                        <li>город 3</li>
+                        <li>город 4</li>
+                        <li>город 5</li>
+                        <li>город 6</li>
+                        <li>город 7</li>
+                        <li>город 8</li>
+                        <li>город 9</li>
+                        <li>город 10</li>
+                        <li>город 11</li>
+                        <li>город 12</li>
+                        <li>город 13</li>
+                        <li>город 14</li>
+                        <li>город 15</li>
+                        <li>город 16</li>
+                        <li>город 17</li>
+                        <li>город 18</li>
+                        <li>город 19</li>
+                        <li>город 20</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="form_checkbox">
+                  <input type="checkbox" checked name="" id="">
+                  <span class="icon">
+                    <img src="./images/check.svg" alt="">
+                  </span>
+                  <label for="">Узнать адрес у получателя</label>
+                </div>
+                <div class="date-picker">
+                  <input id="inline_picked_date2" type="text">
+                  <div class="flatpickr" data-inline="true" data-altInput="#inline_picked_date2"></div>
+                </div>
+              </div>
+            </div>
+            <div class="header__right">
+              <button class="search_btn filter-modal__open">
+                <img src="./images/search.svg" alt="">
+              </button>
+              <div class="header__search form_inp">
+                <input type="text" placeholder="Поиск бренда или подарка">
+                <button>
+                  <img src="./images/search.svg" alt="">
+                </button>
+              </div>
+              <div class="select_currency">
+                <div class="select_currency__btn">
+                  <input type="text" value="РУБ">
+                  <img src="./images/arrow-down.svg" alt="">
+                </div>
+                <ul class="select_currency__list">
+                  <li class="icon">
+                    <img src="./images/rectangle.svg" alt="">
+                  </li>
+                  <li class="active" data-currency="РУБ">₽ Рубли</li>
+                  <li data-currency="USD">$ доллары</li>
+                  <li data-currency="EUR">€ евро</li>
+                  <li data-currency="KZT">₸ тенге</li>
+                </ul>
+              </div>
+              <div class="select_lang">
+                <div class="select_lang__btn">
+                  <img src="./images/en.png" alt="">
+                  <input type="text" value="en">
+                </div>
+                <ul class="select_lang__list">
+                  <li class="icon">
+                    <img src="./images/rectangle.svg" alt="">
+                  </li>
+                  <li>
+                    <img src="./images/en.png" alt="" class="flag">
+                    <p>EN</p>
+                  </li>
+                  <li>
+                    <img src="./images/ru.png" alt="" class="flag">
+                    <p>RU</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="header__phone">
+                <button class="header__phone_btn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M17.1047 3.56183C16.4124 4.24896 15.4021 5.91313 14.9949 6.72056C14.4653 7.77202 14.4221 7.85857 15.036 8.68503C15.4458 9.23629 15.8118 9.60279 15.6742 10.248C15.5366 10.8931 14.7609 12.2951 13.5373 13.5226C12.3137 14.7502 10.8711 15.5711 10.2282 15.7091C9.58522 15.8471 9.22307 15.475 8.67055 15.0691C7.89174 14.4971 7.76193 14.5404 6.71054 15.0293C5.89278 15.4105 4.2443 16.4503 3.56067 17.1452C2.82642 17.8886 2.95623 17.8886 3.15526 18.3676C3.31932 18.7576 3.51875 19.1317 3.75105 19.4853C4.21098 20.1776 4.59303 20.5619 5.16719 20.8306C5.74135 21.0993 7.08739 21.22 9.60815 19.8323C12.1289 18.4446 13.4178 17.4711 15.4272 15.456C17.4365 13.4409 18.5169 11.8914 19.7872 9.62616C21.3565 6.82397 21.0506 5.74914 20.7824 5.17321C20.5141 4.59728 20.1334 4.21348 19.4411 3.75265C19.0881 3.51974 18.7144 3.31985 18.3248 3.15552C17.8476 2.95604 17.8476 2.82623 17.1047 3.56183Z"
+                      stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M12 2C10.6868 2 9.38642 2.25866 8.17317 2.7612C6.95991 3.26375 5.85752 4.00035 4.92893 4.92893C4.00035 5.85752 3.26375 6.95991 2.7612 8.17317C2.25866 9.38642 2 10.6868 2 12"
+                      stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M11.3596 6.03428C9.98845 6.18147 8.7099 6.79646 7.73905 7.77575C6.76819 8.75504 6.16429 10.0389 6.02896 11.4112"
+                      stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <ul class="header__phone_list">
+                  <li class="icon">
+                    <img src="./images/rectangle.svg" alt="">
+                  </li>
+                  <li>
+                    <h3>Россия</h3>
+                    <div class="list_wrap">
+                      <div class="list_item">
+                        <a href="tel:+8 (800) 333-60-50">8 (800) 333-60-50</a>
+                        <p>По России бесплатно</p>
+                      </div>
+                      <div class="list_item">
+                        <a href="tel:+7 (495) 225-54-87">+7 (495) 225-54-87</a>
+                        <p>По России бесплатно</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <h3>Казахстан</h3>
+                    <a href="tel:+7 (727) 272-01-01">+7 (727) 272-01-01</a>
+                    <p>с 10:00 до 19:00, GMT+6</p>
+                  </li>
+                  <li>
+                    <h3>США</h3>
+                    <a href="tel:+1 (347) 434-93-50">+1 (347) 434-93-50</a>
+                  </li>
+                  <li>
+                    <h3>Германия</h3>
+                    <a href="tel:+49 (302) 178-24-38">+49 (302) 178-24-38</a>
+                  </li>
+                  <li>
+                    <h3>Великобритания</h3>
+                    <a href="tel:+44 (203) 608-57-76">+44 (203) 608-57-76</a>
+                  </li>
+                  <li>
+                    <a href="#" class="btn-yellow">
+                      <img src="./images/call-icon.svg" alt="">
+                      <span>обратный звонок</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <button class="filter_btn cfilter__open">
+                <img src="./images/filter-icon.svg" alt="">
+              </button>
+              <a href="#" class="like-icon">
+                <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M19.4578 2.50292C18.9691 2.02645 18.3889 1.64848 17.7503 1.39061C17.1117 1.13273 16.4272 1 15.7359 1C15.0446 1 14.3601 1.13273 13.7215 1.39061C13.0829 1.64848 12.5026 2.02645 12.0139 2.50292L10.9997 3.4913L9.98554 2.50292C8.99842 1.54094 7.6596 1.0005 6.26361 1.0005C4.86761 1.0005 3.52879 1.54094 2.54168 2.50292C1.55456 3.46491 1 4.76964 1 6.1301C1 7.49055 1.55456 8.79528 2.54168 9.75727L3.55588 10.7457L10.9997 18L18.4436 10.7457L19.4578 9.75727C19.9467 9.28102 20.3346 8.71557 20.5992 8.0932C20.8638 7.47084 21 6.80377 21 6.1301C21 5.45642 20.8638 4.78935 20.5992 4.16699C20.3346 3.54463 19.9467 2.97917 19.4578 2.50292Z"
+                    fill="white" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>99</span>
+              </a>
+              <a href="#" class="basket-icon">
+                <img src="./images/basket.svg" alt="">
+                <span>99</span>
+              </a>
+              <!-- <a href="#" class="btn-yellow-border sm login-modal__open">Войти</a> -->
+              <div class="user-name__wrap">
+                <a href="#" class="user-name">
+                  <span class="icon">
+                    <img src="./images/user-icon.svg" alt="">
+                  </span>
+                  <span class="text">Иван Константино...</span>
+                </a>
+                <div class="user-name__content">
+                  <img src="./images/rectangle.svg" alt="" class="icon">
+                  <button class="user-name__close">
+                    <img src="./images/times.svg" alt="">
+                  </button>
+                  <ul>
+                    <li>
+                      <a href="#">Личный кабинет</a>
+                    </li>
+                    <li>
+                      <a href="#">Планировщик</a>
+                    </li>
+                    <li>
+                      <a href="#">История заказов</a>
+                    </li>
+                    <li>
+                      <a href="#">Мои букеты</a>
+                    </li>
+                    <li>
+                      <a href="#">Профиль</a>
+                    </li>
+                  </ul>
+                  <a href="#" class="btn-yellow">ВЫЙТИ</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header__content_bottom">
+            <div class="information">
+              <button class="information__btn">
+                <span>Информация</span>
+                <span class="icon">
+                  <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.2002 1.69995L7.20019 7.29995L13.2002 1.69995" stroke="#2E2E2E" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+              <ul class="information__list">
+                <li class="icon">
+                  <img src="./images/rectangle.svg" alt="">
+                </li>
+                <li>
+                  <a href="#">Доставка и оплата</a>
+                </li>
+                <li>
+                  <a href="#">Гарантия</a>
+                </li>
+                <li>
+                  <a href="#">О нас</a>
+                </li>
+                <li>
+                  <a href="#">Блог</a>
+                </li>
+                <li>
+                  <a href="#">Бизнесу</a>
+                </li>
+              </ul>
+            </div>
+            <a href="#" class="green-link">Продавайте на FloraExpress</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header end -->
+
+    <!-- Mobile menu -->
+    <section class="mobile-menu">
+      <div class="mobile-menu__bg"></div>
+      <div class="mobile-menu__content">
+        <button class="mobile-menu__close">
+          <img src="./images/times.svg" alt="">
+        </button>
+        <div class="mobile-menu__body">
+          <ul class="mobile-menu__navs">
+            <li class="mobile-menu__navs_item moible-menu__navs_btn" data-navs="navs-1">
+              <span>Каталог</span>
+              <img src="./images/arrow-right.svg" alt="">
+            </li>
+            <li class="mobile-menu__navs_item moible-menu__navs_btn" data-navs="navs-2">
+              <span>Букеты</span>
+              <img src="./images/arrow-right.svg" alt="">
+            </li>
+            <li class="mobile-menu__navs_item moible-menu__navs_btn" data-navs="navs-3">
+              <span>Композиции</span>
+              <img src="./images/arrow-right.svg" alt="">
+            </li>
+            <li class="mobile-menu__navs_item moible-menu__navs_btn" data-navs="navs-4">
+              <span>Охапки</span>
+              <img src="./images/arrow-right.svg" alt="">
+            </li>
+            <li class="mobile-menu__navs_item moible-menu__navs_btn" data-navs="navs-5">
+              <span>Новинки</span>
+              <img src="./images/arrow-right.svg" alt="">
+            </li>
+            <li class="mobile-menu__navs_item moible-menu__navs_btn" data-navs="navs-6">
+              <span>Хиты продаж</span>
+              <img src="./images/arrow-right.svg" alt="">
+            </li>
+            <li class="mobile-menu__navs_item moible-menu__navs_btn" data-navs="navs-7">
+              <span>ТОП 10</span>
+              <img src="./images/arrow-right.svg" alt="">
+            </li>
+            <li class="mobile-menu__navs_item moible-menu__navs_btn" data-navs="navs-8">
+              <span>Съедобные подарки</span>
+              <img src="./images/arrow-right.svg" alt="">
+            </li>
+            <li class="mobile-menu__navs_item moible-menu__navs_btn" data-navs="navs-9">
+              <span>День рождения</span>
+              <img src="./images/arrow-right.svg" alt="">
+            </li>
+            <li class="mobile-menu__navs_item moible-menu__navs_btn" data-navs="navs-10">
+              <span>День всех влюбленных</span>
+              <img src="./images/arrow-right.svg" alt="">
+            </li>
+          </ul>
+          <div class="btns_wrap">
+            <a href="#" class="btn-yellow">войти</a>
+            <a href="#" class="btn-yellow-border">Продавайте на FloraExpress</a>
+          </div>
+          <button class="mobile-menu__navs_item moible-menu__navs_btn" data-navs="navs-11">
+            <span>Информация</span>
+            <img src="./images/arrow-right.svg" alt="">
+          </button>
+          <div class="lang_wrap">
+            <p>Язык</p>
+            <div class="lang">
+              <button class="active">Rus</button>
+              <button>Eng</button>
+            </div>
+          </div>
+          <div class="currency_wrap">
+            <p>Валюта</p>
+            <div class="currency">
+              <button class="active">РУБ</button>
+              <button>USD</button>
+              <button>EUR</button>
+              <button>KZT</button>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-menu__navs_content" data-navs-item="navs-1">
+          <button class="back-btn">
+            <img src="./images/arrow-left.svg" alt="">
+            <span>Каталог</span>
+          </button>
+          <ul>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Букеты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Композиции</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Охапки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Новинки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Хиты продаж</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>ТОП 10</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Съедобные подарки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>День рождения</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>День всех влюбленных</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__navs_content" data-navs-item="navs-2">
+          <button class="back-btn">
+            <img src="./images/arrow-left.svg" alt="">
+            <span>Букеты</span>
+          </button>
+          <ul>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Розы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Фрукты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Шляпные коробки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Гортензия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Сухоцветы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Тюльпаны</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ирисы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Герберы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Хризантемы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Орхидеи</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Экзоты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ромашки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Альстромерия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Лизиантус</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__navs_content" data-navs-item="navs-3">
+          <button class="back-btn">
+            <img src="./images/arrow-left.svg" alt="">
+            <span>Композиции</span>
+          </button>
+          <ul>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Розы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Фрукты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Шляпные коробки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Гортензия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Сухоцветы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Тюльпаны</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ирисы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Герберы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Хризантемы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Орхидеи</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Экзоты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ромашки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Альстромерия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Лизиантус</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__navs_content" data-navs-item="navs-4">
+          <button class="back-btn">
+            <img src="./images/arrow-left.svg" alt="">
+            <span>Охапки</span>
+          </button>
+          <ul>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Розы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Фрукты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Шляпные коробки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Гортензия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Сухоцветы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Тюльпаны</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ирисы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Герберы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Хризантемы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Орхидеи</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Экзоты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ромашки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Альстромерия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Лизиантус</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__navs_content" data-navs-item="navs-5">
+          <button class="back-btn">
+            <img src="./images/arrow-left.svg" alt="">
+            <span>Новинки</span>
+          </button>
+          <ul>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Розы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Фрукты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Шляпные коробки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Гортензия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Сухоцветы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Тюльпаны</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ирисы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Герберы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Хризантемы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Орхидеи</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Экзоты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ромашки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Альстромерия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Лизиантус</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__navs_content" data-navs-item="navs-6">
+          <button class="back-btn">
+            <img src="./images/arrow-left.svg" alt="">
+            <span>Хиты продаж</span>
+          </button>
+          <ul>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Розы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Фрукты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Шляпные коробки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Гортензия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Сухоцветы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Тюльпаны</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ирисы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Герберы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Хризантемы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Орхидеи</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Экзоты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ромашки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Альстромерия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Лизиантус</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__navs_content" data-navs-item="navs-7">
+          <button class="back-btn">
+            <img src="./images/arrow-left.svg" alt="">
+            <span>ТОП 10</span>
+          </button>
+          <ul>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Розы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Фрукты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Шляпные коробки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Гортензия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Сухоцветы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Тюльпаны</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ирисы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Герберы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Хризантемы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Орхидеи</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Экзоты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ромашки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Альстромерия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Лизиантус</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__navs_content" data-navs-item="navs-8">
+          <button class="back-btn">
+            <img src="./images/arrow-left.svg" alt="">
+            <span>Съедобные подарки</span>
+          </button>
+          <ul>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Розы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Фрукты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Шляпные коробки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Гортензия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Сухоцветы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Тюльпаны</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ирисы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Герберы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Хризантемы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Орхидеи</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Экзоты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ромашки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Альстромерия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Лизиантус</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__navs_content" data-navs-item="navs-9">
+          <button class="back-btn">
+            <img src="./images/arrow-left.svg" alt="">
+            <span>День рождения</span>
+          </button>
+          <ul>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Розы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Фрукты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Шляпные коробки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Гортензия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Сухоцветы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Тюльпаны</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ирисы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Герберы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Хризантемы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Орхидеи</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Экзоты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ромашки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Альстромерия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Лизиантус</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__navs_content" data-navs-item="navs-10">
+          <button class="back-btn">
+            <img src="./images/arrow-left.svg" alt="">
+            <span>День всех влюбленных</span>
+          </button>
+          <ul>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Розы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Фрукты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Шляпные коробки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Гортензия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Сухоцветы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Тюльпаны</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ирисы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Герберы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Хризантемы</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Орхидеи</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Экзоты</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Ромашки</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Альстромерия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Лизиантус</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile-menu__navs_content" data-navs-item="navs-11">
+          <button class="back-btn">
+            <img src="./images/arrow-left.svg" alt="">
+            <span>Информация</span>
+          </button>
+          <ul>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Доставка и оплата</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Гарантия</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>О нас</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Блог</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+            <li>
+              <a href="#" class="mobile-menu__navs_item">
+                <span>Бизнесу</span>
+                <img src="./images/arrow-right.svg" alt="">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Mobile menu end -->
+
+    <!-- Modal -->
+    <!-- Login modal -->
+    <section class="modal login-modal">
+      <div class="modal__bg"></div>
+      <div class="modal__content">
+        <button type="button" class="modal__close">
+          <img src="./images/times.svg" alt="">
+        </button>
+        <h2 class="title">Войдите или зарегистрируйтесь</h2>
+        <div class="form_inp">
+          <label for="">Название инпута</label>
+          <input type="tel" placeholder="+7">
+        </div>
+        <ul>
+          <li class="form_radio">
+            <input type="radio" name="network" checked id="">
+            <span class="icon"></span>
+            <p>WhatsApp</p>
+          </li>
+          <li class="form_radio">
+            <input type="radio" name="network" id="">
+            <span class="icon"></span>
+            <p>SMS</p>
+          </li>
+          <li class="form_radio">
+            <input type="radio" name="network" id="">
+            <span class="icon"></span>
+            <p>Email</p>
+          </li>
+        </ul>
+        <h4>Код будет отправлен на ваш WhatsApp</h4>
+        <button class="btn-yellow confirm-number__open">получить код</button>
+      </div>
+    </section>
+    <!-- Login modal end -->
+    <!-- Buy product -->
+    <section class="modal confirm-number">
+      <div class="modal__bg"></div>
+      <div class="modal__content">
+        <button type="button" class="modal__close">
+          <img src="./images/times.svg" alt="">
+        </button>
+        <h2 class="title">Подтвердите номер</h2>
+        <div class="description">
+          <div class="icon">
+            <img src="./images/whatsapp-icon.svg" alt="">
+            <!-- <img src="./images/msg-icon.svg" alt=""> -->
+            <!-- <img src="./images/sms-icon.svg" alt=""> -->
+          </div>
+          <p>
+            Мы отправили код подтверждения в мессенджер WhatsApp на номер
+            <b>+7 ( 747 ) 490-40-85</b> <button>Изменить</button>
+          </p>
+        </div>
+        <div class="inputs">
+          <input type="text" class="form_inp" maxlength="1" id="input1">
+          <input type="text" class="form_inp" maxlength="1" id="input2">
+          <input type="text" class="form_inp" maxlength="1" id="input3">
+          <input type="text" class="form_inp" maxlength="1" id="input4">
+        </div>
+        <a href="#">Получить новый код можно через <b>02:43</b></a>
+        <a href="#" class="text-green">Запросить СМС-код</a>
+        <a href="#" class="text-green">Не могу войти</a>
+      </div>
+    </section>
+    <!-- Buy product end -->
+    <!-- Modal end -->
+
+    <!-- Navs -->
+    <nav class="navs">
+      <ul class="container navs__container">
+        <li class="navs__item">
+          <a href="#" class="navs__link">Букеты</a>
+          <div class="navs__content">
+            <div class="navs__content_left">
+              <h3>Букеты</h3>
+              <ul class="navs__content_list">
+                <li>
+                  <a href="#">Розы</a>
+                </li>
+                <li>
+                  <a href="#">Герберы</a>
+                </li>
+                <li>
+                  <a href="#">Фрукты</a>
+                </li>
+                <li>
+                  <a href="#">Хризантемы</a>
+                </li>
+                <li>
+                  <a href="#">Шляпные коробки</a>
+                </li>
+                <li>
+                  <a href="#">Орхидеи</a>
+                </li>
+                <li>
+                  <a href="#">Кустовые розы</a>
+                </li>
+                <li>
+                  <a href="#">Экзоты</a>
+                </li>
+                <li>
+                  <a href="#">Гортензия</a>
+                </li>
+                <li>
+                  <a href="#">Ромашки</a>
+                </li>
+                <li>
+                  <a href="#">Сухоцветы</a>
+                </li>
+                <li>
+                  <a href="#">Альстромерия</a>
+                </li>
+                <li>
+                  <a href="#">Тюльпаны</a>
+                </li>
+                <li>
+                  <a href="#">Лизиантус</a>
+                </li>
+                <li>
+                  <a href="#">Ирисы</a>
+                </li>
+              </ul>
+            </div>
+            <div class="main-img">
+              <img src="./images/navs-card.png" alt="">
+            </div>
+          </div>
+        </li>
+        <li class="navs__item">
+          <a href="#" class="navs__link">Композиции</a>
+          <div class="navs__content">
+            <div class="navs__content_left">
+              <h3>Композиции</h3>
+              <ul class="navs__content_list">
+                <li>
+                  <a href="#">Розы</a>
+                </li>
+                <li>
+                  <a href="#">Герберы</a>
+                </li>
+                <li>
+                  <a href="#">Фрукты</a>
+                </li>
+                <li>
+                  <a href="#">Хризантемы</a>
+                </li>
+                <li>
+                  <a href="#">Шляпные коробки</a>
+                </li>
+                <li>
+                  <a href="#">Орхидеи</a>
+                </li>
+                <li>
+                  <a href="#">Кустовые розы</a>
+                </li>
+                <li>
+                  <a href="#">Экзоты</a>
+                </li>
+                <li>
+                  <a href="#">Гортензия</a>
+                </li>
+                <li>
+                  <a href="#">Ромашки</a>
+                </li>
+                <li>
+                  <a href="#">Сухоцветы</a>
+                </li>
+                <li>
+                  <a href="#">Альстромерия</a>
+                </li>
+                <li>
+                  <a href="#">Тюльпаны</a>
+                </li>
+                <li>
+                  <a href="#">Лизиантус</a>
+                </li>
+                <li>
+                  <a href="#">Ирисы</a>
+                </li>
+              </ul>
+            </div>
+            <div class="main-img">
+              <img src="./images/navs-card.png" alt="">
+            </div>
+          </div>
+        </li>
+        <li class="navs__item">
+          <a href="#" class="navs__link">Охапки</a>
+          <div class="navs__content">
+            <div class="navs__content_left">
+              <h3>Охапки</h3>
+              <ul class="navs__content_list">
+                <li>
+                  <a href="#">Розы</a>
+                </li>
+                <li>
+                  <a href="#">Герберы</a>
+                </li>
+                <li>
+                  <a href="#">Фрукты</a>
+                </li>
+                <li>
+                  <a href="#">Хризантемы</a>
+                </li>
+                <li>
+                  <a href="#">Шляпные коробки</a>
+                </li>
+                <li>
+                  <a href="#">Орхидеи</a>
+                </li>
+                <li>
+                  <a href="#">Кустовые розы</a>
+                </li>
+                <li>
+                  <a href="#">Экзоты</a>
+                </li>
+                <li>
+                  <a href="#">Гортензия</a>
+                </li>
+                <li>
+                  <a href="#">Ромашки</a>
+                </li>
+                <li>
+                  <a href="#">Сухоцветы</a>
+                </li>
+                <li>
+                  <a href="#">Альстромерия</a>
+                </li>
+                <li>
+                  <a href="#">Тюльпаны</a>
+                </li>
+                <li>
+                  <a href="#">Лизиантус</a>
+                </li>
+                <li>
+                  <a href="#">Ирисы</a>
+                </li>
+              </ul>
+            </div>
+            <div class="main-img">
+              <img src="./images/navs-card.png" alt="">
+            </div>
+          </div>
+        </li>
+        <li class="navs__item">
+          <a href="#" class="navs__link">Новинки</a>
+          <div class="navs__content">
+            <div class="navs__content_left">
+              <h3>Новинки</h3>
+              <ul class="navs__content_list">
+                <li>
+                  <a href="#">Розы</a>
+                </li>
+                <li>
+                  <a href="#">Герберы</a>
+                </li>
+                <li>
+                  <a href="#">Фрукты</a>
+                </li>
+                <li>
+                  <a href="#">Хризантемы</a>
+                </li>
+                <li>
+                  <a href="#">Шляпные коробки</a>
+                </li>
+                <li>
+                  <a href="#">Орхидеи</a>
+                </li>
+                <li>
+                  <a href="#">Кустовые розы</a>
+                </li>
+                <li>
+                  <a href="#">Экзоты</a>
+                </li>
+                <li>
+                  <a href="#">Гортензия</a>
+                </li>
+                <li>
+                  <a href="#">Ромашки</a>
+                </li>
+                <li>
+                  <a href="#">Сухоцветы</a>
+                </li>
+                <li>
+                  <a href="#">Альстромерия</a>
+                </li>
+                <li>
+                  <a href="#">Тюльпаны</a>
+                </li>
+                <li>
+                  <a href="#">Лизиантус</a>
+                </li>
+                <li>
+                  <a href="#">Ирисы</a>
+                </li>
+              </ul>
+            </div>
+            <div class="main-img">
+              <img src="./images/navs-card.png" alt="">
+            </div>
+          </div>
+        </li>
+        <li class="navs__item">
+          <a href="#" class="navs__link">Хиты продаж</a>
+          <div class="navs__content">
+            <div class="navs__content_left">
+              <h3>Хиты продаж</h3>
+              <ul class="navs__content_list">
+                <li>
+                  <a href="#">Розы</a>
+                </li>
+                <li>
+                  <a href="#">Герберы</a>
+                </li>
+                <li>
+                  <a href="#">Фрукты</a>
+                </li>
+                <li>
+                  <a href="#">Хризантемы</a>
+                </li>
+                <li>
+                  <a href="#">Шляпные коробки</a>
+                </li>
+                <li>
+                  <a href="#">Орхидеи</a>
+                </li>
+                <li>
+                  <a href="#">Кустовые розы</a>
+                </li>
+                <li>
+                  <a href="#">Экзоты</a>
+                </li>
+                <li>
+                  <a href="#">Гортензия</a>
+                </li>
+                <li>
+                  <a href="#">Ромашки</a>
+                </li>
+                <li>
+                  <a href="#">Сухоцветы</a>
+                </li>
+                <li>
+                  <a href="#">Альстромерия</a>
+                </li>
+                <li>
+                  <a href="#">Тюльпаны</a>
+                </li>
+                <li>
+                  <a href="#">Лизиантус</a>
+                </li>
+                <li>
+                  <a href="#">Ирисы</a>
+                </li>
+              </ul>
+            </div>
+            <div class="main-img">
+              <img src="./images/navs-card.png" alt="">
+            </div>
+          </div>
+        </li>
+        <li class="navs__item">
+          <a href="#" class="navs__link">ТОП 10</a>
+          <div class="navs__content">
+            <div class="navs__content_left">
+              <h3>ТОП 10</h3>
+              <ul class="navs__content_list">
+                <li>
+                  <a href="#">Розы</a>
+                </li>
+                <li>
+                  <a href="#">Герберы</a>
+                </li>
+                <li>
+                  <a href="#">Фрукты</a>
+                </li>
+                <li>
+                  <a href="#">Хризантемы</a>
+                </li>
+                <li>
+                  <a href="#">Шляпные коробки</a>
+                </li>
+                <li>
+                  <a href="#">Орхидеи</a>
+                </li>
+                <li>
+                  <a href="#">Кустовые розы</a>
+                </li>
+                <li>
+                  <a href="#">Экзоты</a>
+                </li>
+                <li>
+                  <a href="#">Гортензия</a>
+                </li>
+                <li>
+                  <a href="#">Ромашки</a>
+                </li>
+                <li>
+                  <a href="#">Сухоцветы</a>
+                </li>
+                <li>
+                  <a href="#">Альстромерия</a>
+                </li>
+                <li>
+                  <a href="#">Тюльпаны</a>
+                </li>
+                <li>
+                  <a href="#">Лизиантус</a>
+                </li>
+                <li>
+                  <a href="#">Ирисы</a>
+                </li>
+              </ul>
+            </div>
+            <div class="main-img">
+              <img src="./images/navs-card.png" alt="">
+            </div>
+          </div>
+        </li>
+        <li class="navs__item">
+          <a href="#" class="navs__link">Подарки</a>
+          <div class="navs__content">
+            <div class="navs__content_left">
+              <h3>Подарки</h3>
+              <ul class="navs__content_list">
+                <li>
+                  <a href="#">Розы</a>
+                </li>
+                <li>
+                  <a href="#">Герберы</a>
+                </li>
+                <li>
+                  <a href="#">Фрукты</a>
+                </li>
+                <li>
+                  <a href="#">Хризантемы</a>
+                </li>
+                <li>
+                  <a href="#">Шляпные коробки</a>
+                </li>
+                <li>
+                  <a href="#">Орхидеи</a>
+                </li>
+                <li>
+                  <a href="#">Кустовые розы</a>
+                </li>
+                <li>
+                  <a href="#">Экзоты</a>
+                </li>
+                <li>
+                  <a href="#">Гортензия</a>
+                </li>
+                <li>
+                  <a href="#">Ромашки</a>
+                </li>
+                <li>
+                  <a href="#">Сухоцветы</a>
+                </li>
+                <li>
+                  <a href="#">Альстромерия</a>
+                </li>
+                <li>
+                  <a href="#">Тюльпаны</a>
+                </li>
+                <li>
+                  <a href="#">Лизиантус</a>
+                </li>
+                <li>
+                  <a href="#">Ирисы</a>
+                </li>
+              </ul>
+            </div>
+            <div class="main-img">
+              <img src="./images/navs-card.png" alt="">
+            </div>
+          </div>
+        </li>
+        <li class="navs__item">
+          <a href="#" class="navs__link">Съедобные подарки</a>
+          <div class="navs__content">
+            <div class="navs__content_left">
+              <h3>Съедобные подарки</h3>
+              <ul class="navs__content_list">
+                <li>
+                  <a href="#">Розы</a>
+                </li>
+                <li>
+                  <a href="#">Герберы</a>
+                </li>
+                <li>
+                  <a href="#">Фрукты</a>
+                </li>
+                <li>
+                  <a href="#">Хризантемы</a>
+                </li>
+                <li>
+                  <a href="#">Шляпные коробки</a>
+                </li>
+                <li>
+                  <a href="#">Орхидеи</a>
+                </li>
+                <li>
+                  <a href="#">Кустовые розы</a>
+                </li>
+                <li>
+                  <a href="#">Экзоты</a>
+                </li>
+                <li>
+                  <a href="#">Гортензия</a>
+                </li>
+                <li>
+                  <a href="#">Ромашки</a>
+                </li>
+                <li>
+                  <a href="#">Сухоцветы</a>
+                </li>
+                <li>
+                  <a href="#">Альстромерия</a>
+                </li>
+                <li>
+                  <a href="#">Тюльпаны</a>
+                </li>
+                <li>
+                  <a href="#">Лизиантус</a>
+                </li>
+                <li>
+                  <a href="#">Ирисы</a>
+                </li>
+              </ul>
+            </div>
+            <div class="main-img">
+              <img src="./images/navs-card.png" alt="">
+            </div>
+          </div>
+        </li>
+        <li class="navs__item">
+          <a href="#" class="navs__link">День рождения</a>
+          <div class="navs__content">
+            <div class="navs__content_left">
+              <h3>День рождения</h3>
+              <ul class="navs__content_list">
+                <li>
+                  <a href="#">Розы</a>
+                </li>
+                <li>
+                  <a href="#">Герберы</a>
+                </li>
+                <li>
+                  <a href="#">Фрукты</a>
+                </li>
+                <li>
+                  <a href="#">Хризантемы</a>
+                </li>
+                <li>
+                  <a href="#">Шляпные коробки</a>
+                </li>
+                <li>
+                  <a href="#">Орхидеи</a>
+                </li>
+                <li>
+                  <a href="#">Кустовые розы</a>
+                </li>
+                <li>
+                  <a href="#">Экзоты</a>
+                </li>
+                <li>
+                  <a href="#">Гортензия</a>
+                </li>
+                <li>
+                  <a href="#">Ромашки</a>
+                </li>
+                <li>
+                  <a href="#">Сухоцветы</a>
+                </li>
+                <li>
+                  <a href="#">Альстромерия</a>
+                </li>
+                <li>
+                  <a href="#">Тюльпаны</a>
+                </li>
+                <li>
+                  <a href="#">Лизиантус</a>
+                </li>
+                <li>
+                  <a href="#">Ирисы</a>
+                </li>
+              </ul>
+            </div>
+            <div class="main-img">
+              <img src="./images/navs-card.png" alt="">
+            </div>
+          </div>
+        </li>
+        <li class="navs__item">
+          <a href="#" class="navs__link">День всех влюбленных</a>
+          <div class="navs__content">
+            <div class="navs__content_left">
+              <h3>День всех влюбленных</h3>
+              <ul class="navs__content_list">
+                <li>
+                  <a href="#">Розы</a>
+                </li>
+                <li>
+                  <a href="#">Герберы</a>
+                </li>
+                <li>
+                  <a href="#">Фрукты</a>
+                </li>
+                <li>
+                  <a href="#">Хризантемы</a>
+                </li>
+                <li>
+                  <a href="#">Шляпные коробки</a>
+                </li>
+                <li>
+                  <a href="#">Орхидеи</a>
+                </li>
+                <li>
+                  <a href="#">Кустовые розы</a>
+                </li>
+                <li>
+                  <a href="#">Экзоты</a>
+                </li>
+                <li>
+                  <a href="#">Гортензия</a>
+                </li>
+                <li>
+                  <a href="#">Ромашки</a>
+                </li>
+                <li>
+                  <a href="#">Сухоцветы</a>
+                </li>
+                <li>
+                  <a href="#">Альстромерия</a>
+                </li>
+                <li>
+                  <a href="#">Тюльпаны</a>
+                </li>
+                <li>
+                  <a href="#">Лизиантус</a>
+                </li>
+                <li>
+                  <a href="#">Ирисы</a>
+                </li>
+              </ul>
+            </div>
+            <div class="main-img">
+              <img src="./images/navs-card.png" alt="">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <!-- Navs end -->
+
+    <!-- Navs mb -->
+    <section class="navs-mb">
+      <ul class="navs-mb__content">
+        <li class="navs-mb__content_item">
+          <button class="navs-mb__content_btn">
+            <span>Доставка 24/7</span>
+          </button>
+        </li>
+        <li class="navs-mb__content_item">
+          <button class="navs-mb__content_btn">
+            <span>Цветы</span>
+            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.2002 5.69995L8.20019 11.3L14.2002 5.69995" stroke="#2E2E2E" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="navs-mb__list list-1">
+            <img src="./images/rectangle.svg" alt="" class="corner-icon">
+            <ul>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" checked id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Розы</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Гипсофила</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Фрукты</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Диантус</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Кустовые розы</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Гиацинты</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Гортензия</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Пионы</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Ягоды</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Тюльпны</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Пионовидная роза</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Ирисы</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Орхидеи</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Герберы</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Ромашки</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Лизиантус</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Альстромерия</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label>Хризантемы</label>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="navs-mb__content_item">
+          <button class="navs-mb__content_btn">
+            <span>Цены</span>
+            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.2002 5.69995L8.20019 11.3L14.2002 5.69995" stroke="#2E2E2E" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="navs-mb__list list-2">
+            <img src="./images/rectangle.svg" alt="" class="corner-icon">
+            <div class="list-2__head">
+              <h3>Цены</h3>
+              <div class="select_currency">
+                <div class="select_currency__btn">
+                  <input type="text" value="РУБ" currency-icon="icon-0">
+                  <img src="./images/arrow-down.svg" alt="">
+                </div>
+                <ul class="select_currency__list">
+                  <li class="icon">
+                    <img src="./images/rectangle.svg" alt="">
+                  </li>
+                  <li class="active" data-currency="РУБ">₽ Рубли</li>
+                  <li data-currency="USD">$ доллары</li>
+                  <li data-currency="EUR">€ евро</li>
+                  <li data-currency="KZT">₸ тенге</li>
+                </ul>
+              </div>
+            </div>
+            <div class="form_range">
+              <div class="form_range__inp">
+                <div class="line"></div>
+                <input value="1500" min="0" max="15000" step="1" type="range" />
+                <input value="12500" min="0" max="15000" step="1" type="range" />
+              </div>
+              <div class="form_range__val">
+                <div class="form_range__val_item">
+                  <span>От</span>
+                  <input class="val" type="number" value="0" min="0" max="15000" step="1">
+                  <span class="currency" currency-icon="icon-0">₽</span>
+                </div>
+                <div class="form_range__val_item">
+                  <span>До</span>
+                  <input class="val" type="number" value="0" min="0" max="15000" step="1">
+                  <span class="currency" currency-icon="icon-0">₽</span>
+                </div>
+              </div>
+            </div>
+            <ul>
+              <li>
+                <a href="#">от 100 ₽</a>
+              </li>
+              <li>
+                <a href="#">100 - 500 ₽</a>
+              </li>
+              <li>
+                <a href="#">500 - 1500 ₽</a>
+              </li>
+              <li>
+                <a href="#">1500 - 3000 ₽</a>
+              </li>
+              <li>
+                <a href="#">3000 - 5000 ₽</a>
+              </li>
+              <li>
+                <a href="#">от 5000 ₽</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <!-- Navs mb end -->
+
+    <!-- Filter -->
+    <div class="categories__filter other-page">
+      <div class="categories__filter__bg"></div>
+      <div class="categories__filter_content">
+        <div class="categories__filter_head">
+          <h3>фильтр</h3>
+          <div>
+            <button>Сбросить фильтры</button>
+            <button class="categories__filter_close">
+              <img src="./images/times.svg" alt="">
+            </button>
+          </div>
+        </div>
+        <div class="form_range__wrap">
+          <div class="form_range__wrap_head">
+            <h3>Цены</h3>
+            <div class="select_currency">
+              <div class="select_currency__btn">
+                <input type="text" value="РУБ" currency-icon="icon-1">
+                <img src="./images/arrow-down.svg" alt="">
+              </div>
+              <ul class="select_currency__list">
+                <li class="icon">
+                  <img src="./images/rectangle.svg" alt="">
+                </li>
+                <li class="active" data-currency="РУБ">₽ Рубли</li>
+                <li data-currency="USD">$ доллары</li>
+                <li data-currency="EUR">€ евро</li>
+                <li data-currency="KZT">₸ тенге</li>
+              </ul>
+            </div>
+          </div>
+          <div class="form_range">
+            <div class="form_range__inp">
+              <div class="line"></div>
+              <input value="1500" min="0" max="15000" step="1" type="range" />
+              <input value="12500" min="0" max="15000" step="1" type="range" />
+            </div>
+            <div class="form_range__val">
+              <div class="form_range__val_item">
+                <span>От</span>
+                <input class="val" type="number" value="0" min="0" max="15000" step="1">
+                <span class="currency" currency-icon="icon-1">₽</span>
+              </div>
+              <div class="form_range__val_item">
+                <span>До</span>
+                <input class="val" type="number" value="0" min="0" max="15000" step="1">
+                <span class="currency" currency-icon="icon-1">₽</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion active">
+          <button class="accordion__btn">
+            <span>Кому</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.7998 5.19995L7.79981 10.8L1.7998 5.19995" stroke="#2E2E2E" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="accordion__body">
+            <ul>
+              <li class="form_checkbox">
+                <input type="checkbox" checked name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Жене</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Девушке</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Маме</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Подруге</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Другу</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Жене</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Девушке</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Маме</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Подруге</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Другу</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion active">
+          <button class="accordion__btn">
+            <span>Повод</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.7998 5.19995L7.79981 10.8L1.7998 5.19995" stroke="#2E2E2E" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="accordion__body">
+            <ul>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">День рождения</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Рождение ребенка</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">С днем свадьбы</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">С новосельем</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">С первым учебным днем</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">День рождения</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Рождение ребенка</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">С днем свадьбы</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">С новосельем</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">С первым учебным днем</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion active">
+          <button class="accordion__btn">
+            <span>Цветы</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.7998 5.19995L7.79981 10.8L1.7998 5.19995" stroke="#2E2E2E" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="accordion__body">
+            <div class="form_inp">
+              <input type="text" placeholder="Я ищу...">
+            </div>
+            <ul class="checkbox_wrap">
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Розы</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Хризантемы</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Гортензия</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Орхидеи</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Тюльпаны</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Экзоты</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Ирисы</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Ромашки</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Герберы</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Альстромерия</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Розы</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Хризантемы</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Гортензия</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Орхидеи</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Тюльпаны</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Экзоты</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Ирисы</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Ромашки</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Герберы</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Альстромерия</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion active">
+          <button class="accordion__btn">
+            <span>Цвет</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.7998 5.19995L7.79981 10.8L1.7998 5.19995" stroke="#2E2E2E" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="accordion__body">
+            <div class="form_inp">
+              <input type="text" placeholder="Я ищу...">
+            </div>
+            <ul class="checkbox_wrap">
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Красный</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Чернный</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Желтый</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Синий</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Зеленый</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Желтый</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Синий</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Зеленый</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Фиолетовый</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Белый</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Красный</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Чернный</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Желтый</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Синий</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Зеленый</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Желтый</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Синий</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Зеленый</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Фиолетовый</label>
+              </li>
+              <li class="form_checkbox">
+                <input type="checkbox" name="" id="">
+                <span class="icon">
+                  <img src="./images/check.svg" alt="">
+                </span>
+                <label for="">Белый</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="btns_wrap">
+          <button class="btn-yellow">Показать</button>
+          <button class="btn-yellow-border">
+            <img src="./images/times-sm.svg" alt="">
+            <span>Очистить фильтр</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Filter end -->
+
+    <main>
+      <section class="text-formatting">
+        <div class="small-container">
+          <h1 class="sec-title">Текстовая с правилами оформления текста для верстальщиков</h1>
+          <p>Если вы занимаетесь цветами и подарками более пяти лет, руководите или работаете вцветочном салоне,
+            курьерской службе или консьерж-сервисе и умеете выполнять сложныезаказы в срок, у нас есть для вас
+            предложение.</p>
+        </div>
+        <div class="container">
+          <div class="text-formatting__swiper swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="slide-content">
+                  <img class="slide-img" src="images/flover.png" alt="">
+                  <p>Flora Express создает и доставляет авторские букеты и цветочные композиции по всему миру с 2006
+                    года</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slide-content">
+                  <img class="slide-img" src="images/flover.png" alt="">
+                  <p>Flora Express создает и доставляет авторские букеты и цветочные композиции по всему миру с 2006
+                    года</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slide-content">
+                  <img class="slide-img" src="images/flover.png" alt="">
+                  <p>Flora Express создает и доставляет авторские букеты и цветочные композиции по всему миру с 2006
+                    года</p>
+                </div>
+              </div>
+            </div>
+            <div class="small-container">
+              <div class="navigation">
+                <button class="swp_btn__prev swiper-btn">
+                  <img src="images/prev.svg" alt="">
+                </button>
+                <div class="swiper-pagination"></div>
+                <button class="swp_btn__next swiper-btn">
+                  <img src="images/next.svg" alt="">
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="small-container">
+          <h2 class="title-sm">Преимущества корпоративного обслуживания</h2>
+        </div>
+        <div class="small-container">
+          <p>Становитесь партнером Flora Express и получайте заказы на доставку цветов и подарков ввашем городе со всего
+            мира. Мы ожидаем, что вы станете не просто исполнителем, амастером доставки в своем городе.
+            <br><br>
+            Ваша работа: вы покупаете подарок или делаете букет, следите за его внешним видом,доставляете точно вовремя
+            и производите хорошее впечатление на получателя.
+          </p>
+        </div>
+        <div class="small-container">
+          <h2 class="title-small">Нам будет интересно сотрудничать, если вы:</h2>
+          <ul>
+            <li>не ищете оправдания своим неудачам, но находите способы их избежать;</li>
+            <li>отвечаете за качество обслуживания;</li>
+            <li>готовитесь к доставке заранее, не откладывая все на последний момент;</li>
+            <li>любите доставлять людям радость;</li>
+            <li>всегда на связи.</li>
+          </ul>
+        </div>
+        <div class="small-container">
+          <p>
+            Чтобы стать партнером, заполните анкету. Мы проверим ваши данные и свяжемся по поводудальнейших шагов.
+            <br><br>
+            Работать с Flora Express трудно. Мы требуем высокого качества исполнения заказа и не идемна компромисс в
+            этом вопросе. Если вам не так важно, в какой упаковке будет доставленподарок или как выглядят доставленные
+            цветы, вам не стоит тратить время на заполнениеанкеты.
+          </p>
+        </div>
+        <div class="small-container">
+          <div class="flex-box">
+            <img src="images/flower-2.png" alt="">
+            <p>
+              Живые цветы — отличный способ повысить лояльность клиентов, установить и укрепить отношения с партнерами,
+              поблагодарить сотрудников за усердие. Отправить букет быстрее, проще и выгоднее, чем выбрать и заказать
+              изготовление другого бизнес-подарка.
+            </p>
+          </div>
+        </div>
+        <div class="small-container flex-container">
+          <b>Нам будет интересно сотрудничать, если вы:</b>
+          <p>Мы поддерживаем бизнес на 360 градусов, оказывая услуги по комплексному сопровождению в области права,
+            финансов и коммуникаций. Нами накоплен уникальный практический опыт применения различных по функционалу
+            инструментов, результативность которых значительно повышается за счет синергетического эффекта.</p>
+          <div class="quote-box">
+            <img src="images/quote.svg" alt="">
+            <div>
+              <i>Мы поддерживаем бизнес на 360 градусов, оказывая услуги по комплексному сопровождению в области права,
+                финансов и коммуникаций. Нами накоплен уникальный практический опыт применения различных по функционалу
+                инструментов, результативность которых значительно повышается за счет синергетического эффекта.</i>
+              <span class="text-muted">Алексей Константинов</span>
+            </div>
+          </div>
+          <p>Мы поддерживаем бизнес на 360 градусов, оказывая услуги по комплексному сопровождению в области права,
+            финансов и коммуникаций. Нами накоплен уникальный практический опыт применения различных по функционалу
+            инструментов, результативность которых значительно повышается за счет синергетического эффекта.</p>
+          <div class="text-flex">
+            <div>
+              <h3>
+                Flora Express создаети доставляет авторскиебукеты и цветочные композициипо всему миру с 2006 года
+              </h3>
+              <div class="text-line"></div>
+            </div>
+            <p>Живые цветы — отличный способ повысить лояльность клиентов, установить и укрепить отношения с партнерами,
+              поблагодарить сотрудников за усердие. Отправить букет быстрее, проще и выгоднее, чем выбрать и заказать
+              изготовление другого бизнес-подарка.</p>
+          </div>
+          <div class="text-formatting__swiper-2 swiper-2 swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/flower-3.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="images/flower-3.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="images/flower-3.png" alt="">
+              </div>
+            </div>
+            <div class="navigation">
+              <button class="swp_btn__prev swiper-btn">
+                <img src="images/prev.svg" alt="">
+              </button>
+              <div class="swiper-pagination"></div>
+              <button class="swp_btn__next swiper-btn">
+                <img src="images/next.svg" alt="">
+              </button>
+            </div>
+          </div>
+          <p>Живые цветы — отличный способ повысить лояльность клиентов, установить и укрепить отношения с партнерами,
+            поблагодарить сотрудников за усердие. Отправить букет быстрее, проще и выгоднее, чем выбрать и заказать
+            изготовление другого бизнес-подарка.</p>
+          <div class="img-box">
+            <img src="images/flower-4.png" alt="">
+            <p class="img-content">
+              Flora Express создаети доставляет авторскиебукеты и цветочные композициипо всему миру с 2006 года
+            </p>
+          </div>
+          <p>
+            Живые цветы — отличный способ повысить лояльность клиентов, установить и укрепить отношения с партнерами,
+            поблагодарить сотрудников за усердие. Отправить букет быстрее, проще и выгоднее, чем выбрать и заказать
+            изготовление другого бизнес-подарка.
+          </p>
+
+          <div class="bootloader-info">
+            <div class="content-box">
+              <h3>Как узнать, разблокирован загрузчик Xiaomi или нет?</h3>
+              <p>Проголосовало <a href="#!">226 человек</a></p>
+            </div>
+            <div class="procent-box">
+              <div class="order-form">
+                <div class="order-form__header">
+                  <label class="form-label" for="procent-box-1">
+                    <input type="radio" name="buket" id="procent-box-1" checked>
+                    Да
+                  </label>
+                  <span>68%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-status" style="width: 68%;"></div>
+                </div>
+              </div>
+              <div class="order-form">
+                <div class="order-form__header">
+                  <label class="form-label" for="procent-box-2">
+                    <input type="radio" name="buket" id="procent-box-2">
+                    Нет
+                  </label>
+                  <span>9%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-status" style="width: 9%;"></div>
+                </div>
+              </div>
+              <div class="order-form">
+                <div class="order-form__header">
+                  <label class="form-label" for="procent-box-3">
+                    <input type="radio" name="buket" id="procent-box-3">
+                    Не знаю/затрудняюсь ответить
+                  </label>
+                  <span>23%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-status" style="width: 68%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="author">
+            <div class="author-box">
+              <img class="author-img" src="images/author-img.png" alt="">
+              <div class="author-info">
+                <span>Автор Статьи</span>
+                <h3>Мария Иванова</h3>
+                <p>Кандидат исторических наук, доцент</p>
+              </div>
+            </div>
+          </div>
+          <div class="share">
+            <span class="text-muted">Поделиться</span>
+            <div class="social-media">
+              <a href="#!">
+                <img src="images/vk.svg" alt="">
+              </a>
+              <a href="#!">
+                <img src="images/facebook.svg" alt="">
+              </a>
+              <a href="#!">
+                <img src="images/twiter.svg" alt="">
+              </a>
+              <a href="#!">
+                <img src="images/telegram.svg" alt="">
+              </a>
+              <a href="#!">
+                <img src="images/pinterest.svg" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="article">
+            <div>
+              <span class="text-muted">Предыдущая статья
+              </span>
+              <b>Flora Express создаети доставляет авторскиебукеты и цветочные композиции</b>
+            </div>
+            <div class="right-box">
+              <span class="text-muted">Следующая статья
+              </span>
+              <b>Разблокировка загрузчика смартфона Xiaomi Redmi 4 серии</b>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <ul>
+            <li>
+              <h3>Магазин</h3>
+            </li>
+            <li>
+              <a href="#">Условия сервиса</a>
+            </li>
+            <li>
+              <a href="#">Вопросы и ответы</a>
+            </li>
+            <li>
+              <a href="#">Гарантия качества</a>
+            </li>
+            <li>
+              <a href="#">Политика обработки персональных данных</a>
+            </li>
+            <li>
+              <a href="#">Скидки</a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <h3>Партнерам</h3>
+            </li>
+            <li>
+              <a href="#">Партнерская программа</a>
+            </li>
+            <li>
+              <a href="#">Цветочным салонам</a>
+            </li>
+            <li>
+              <a href="#">Поставщикам</a>
+            </li>
+            <li>
+              <a href="#">Вакансии</a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <h3>Карты сайта</h3>
+            </li>
+            <li>
+              <a href="#">Основная карта</a>
+            </li>
+            <li>
+              <a href="#">Карта стран</a>
+            </li>
+            <li>
+              <a href="#">Карта городов</a>
+            </li>
+            <li>
+              <a href="#">Карта районов</a>
+            </li>
+          </ul>
+          <div class="network_wrap">
+            <h3>скачивайте наше приложение</h3>
+            <a href="#" class="network_item">
+              <img src="./images/app-1.svg" alt="">
+            </a>
+            <a href="#" class="network_item">
+              <img src="./images/app-2.svg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <ul class="footer__bottom_item">
+            <li>
+              <p>© 2006–2021 Flora Express</p>
+            </li>
+            <li>
+              <a href="#">Доставка цветов</a>
+            </li>
+            <li>
+              <a href="#">Мобильная версия</a>
+            </li>
+          </ul>
+          <ul class="footer__bottom_item">
+            <li>
+              <a href="#">Карта сайта</a>
+            </li>
+            <li>
+              <a href="#">Карта стран</a>
+            </li>
+            <li>
+              <a href="#">Карта Москвы (МКАД)</a>
+            </li>
+          </ul>
+          <div class="footer__bottom_item">
+            <p>Текущий рейтинг</p>
+            <h4>4,74 из 5 <span>(1161 отзывов)</span></h4>
+            <div class="stars">
+              <img src="./images/star.png" alt="">
+              <img src="./images/star.png" alt="">
+              <img src="./images/star.png" alt="">
+              <img src="./images/star.png" alt="">
+              <img src="./images/star.png" alt="">
+            </div>
+            <a href="#">Оцените нас</a>
+          </div>
+          <div class="footer__bottom_item">
+            <a href="tel:+74952255487" class="tel-link">+7 (495) 225-54-87</a>
+            <a href="#" class="btn-yellow-border">обратный звонок</a>
+            <a href="#">Все контакты</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-mb">
+        <div class="footer-mb__head">
+          <div>
+            <p>Текущий рейтинг</p>
+            <div class="stars">
+              <img src="./images/star.png" width="18" alt="">
+              <div class="stars_text">4,74 из 5 <span>(1161 отзывов)</span></div>
+            </div>
+          </div>
+          <a href="#">Оцените нас</a>
+        </div>
+        <div class="footer-mb__contact">
+          <div>
+            <a href="tel:+7 (495) 225-54-87">+7 (495) 225-54-87</a>
+            <a href="#">Все контакты</a>
+          </div>
+          <a href="#" class="btn-yellow-border">обратный звонок</a>
+        </div>
+        <div class="footer-mb__navs">
+          <ul>
+            <li>
+              <a href="#">Магазин</a>
+            </li>
+            <li>
+              <a href="#">Условия сервиса</a>
+            </li>
+            <li>
+              <a href="#">Вопросы и ответы</a>
+            </li>
+            <li>
+              <a href="#">Гарантия качества</a>
+            </li>
+            <li>
+              <a href="#">Политика обработки персональных данных</a>
+            </li>
+            <li>
+              <a href="#">Скидки</a>
+            </li>
+            <li>
+              <a href="#">Партнерская программа </a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="#">Цветочным салонам</a>
+            </li>
+            <li>
+              <a href="#">Поставщикам</a>
+            </li>
+            <li>
+              <a href="#">Вакансии</a>
+            </li>
+            <li>
+              <a href="#">Основная карта</a>
+            </li>
+            <li>
+              <a href="#">Карта стран</a>
+            </li>
+            <li>
+              <a href="#">Карта городов</a>
+            </li>
+            <li>
+              <a href="#">Карта районов</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-mb__app">
+          <h3>скачивайте наше приложение</h3>
+          <div class="footer-mb__app_link">
+            <a href="#">
+              <img src="./images/app-1.svg" alt="">
+            </a>
+            <a href="#">
+              <img src="./images/app-2.svg" alt="">
+            </a>
+          </div>
+        </div>
+        <ul class="networks">
+          <li>
+            <a href="#">
+              <img src="./images/network-4.svg" alt="">
+            </a>
+          </li>
+          <!-- <li>
+                        <a href="#">
+                            <img src="./images/network-1.svg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/network-2.svg" alt="">
+                        </a>
+                    </li> -->
+          <li>
+            <a href="#">
+              <img src="./images/network-3.svg" alt="">
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="link">Полная версия сайта</a>
+        <p>© 2006–2024 Flora Express</p>
+        <a href="#" class="link">Цветочный блог</a>
+      </div>
+    </footer>
+    <!-- Footer end -->
+
+  </div>
+
+  <script src="./js/imask.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- JS file -->
+  <script src="./js/main.js"></script>
+
+</body>
+
+</html>

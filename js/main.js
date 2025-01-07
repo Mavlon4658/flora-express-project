@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-const modalClasses = ['.login-modal', '.buy-product-modal', '.confirm-number'];
+const modalClasses = ['.login-modal', '.buy-product-modal', '.confirm-number', ".order-modal", ".delivery-modal"];
 
 if (modalClasses.length) {
   modalClasses.forEach(cls => {
@@ -164,9 +164,25 @@ if (modalClasses.length) {
   })
 }
 
-let lang = document.querySelector('.header .select_lang');
+// let lang = document.querySelector('.header .select_lang');
+// let langItem = document.querySelectorAll('.select_lang__list li');
+// let langBtn = document.querySelector('.select_lang__btn');
+
+// langBtn.onclick = () => {
+//   lang.classList.toggle('active');
+// }
+
+// langItem.forEach(el => {
+//   el.onclick = () => {
+//     lang.classList.remove('active');
+//     langBtn.querySelector('input').value = el.querySelector('p').textContent;
+//     langBtn.querySelector('img').setAttribute('src', el.querySelector('img').getAttribute('src'));
+//   }
+// })
+let lang = document.querySelector('.select_lang');
 let langItem = document.querySelectorAll('.select_lang__list li');
 let langBtn = document.querySelector('.select_lang__btn');
+let selectedLangText = document.querySelector('.select_lang__btn .selected_lang'); // Matnni olish
 
 langBtn.onclick = () => {
   lang.classList.toggle('active');
@@ -175,10 +191,14 @@ langBtn.onclick = () => {
 langItem.forEach(el => {
   el.onclick = () => {
     lang.classList.remove('active');
-    langBtn.querySelector('input').value = el.querySelector('p').textContent;
-    langBtn.querySelector('img').setAttribute('src', el.querySelector('img').getAttribute('src'));
+    let newLang = el.querySelector('p').textContent;
+    let newFlag = el.querySelector('img').getAttribute('src');
+
+    langBtn.querySelector('input').value = newLang.toLowerCase(); // Inputni yangilash
+    selectedLangText.textContent = newLang; // Matnni yangilash
+    langBtn.querySelector('img').setAttribute('src', newFlag); // Flagni yangilash
   }
-})
+});
 
 const currencyEl = document.querySelectorAll('.select_currency');
 
@@ -254,6 +274,53 @@ const homeSwp = new Swiper('.home__swp .swiper', {
   pagination: {
     el: '.home__swp .swp_pagination',
     clickable: true,
+  }
+})
+
+const textFormattingSwiper = new Swiper('.text-formatting__swiper', {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.text-formatting__swiper .swp_btn__next',
+    prevEl: '.text-formatting__swiper .swp_btn__prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  }
+})
+const textFormattingSwiper2 = new Swiper('.text-formatting__swiper-2', {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.text-formatting__swiper-2 .swp_btn__next',
+    prevEl: '.text-formatting__swiper-2 .swp_btn__prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  }
+})
+const orderContentSwiper = new Swiper('.order-content__swiper', {
+  slidesPerView: 2,
+  spaceBetween: 8,
+  navigation: {
+    nextEl: '.order-content__swiper .swp_btn__next',
+    prevEl: '.order-content__swiper .swp_btn__prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    600: {
+      slidesPerView: 2,
+      spaceBetween: 8,
+    },
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 8,
+    },
   }
 })
 
@@ -751,10 +818,10 @@ document.addEventListener('click', event => {
   }
   const dateBox = document.querySelector(".date-box .header__location_content");
   const dateBoxParent = document.querySelector(".date-box");
-  if (!dateBoxParent.contains(event.target)) {
-    dateBox.classList.remove("active");
-    console.log(dateBox.classList.contains("active"));
-
+  if (dateBoxParent) {
+    if (!dateBoxParent.contains(event.target)) {
+      dateBox.classList.remove("active");
+    }
   }
 })
 
@@ -792,10 +859,10 @@ const promocodeInput = document.querySelector("#promocode-input");
 if (addPromoCode) {
   addPromoCode.addEventListener("click", (e) => {
     promocodeInput.classList.toggle("show");
-    if (e.target.textContent === "+ Добавить") {
+    if (e.target.textContent === "+ Добавить промокод") {
       e.target.textContent = "Применить"
     } else {
-      e.target.textContent = "+ Добавить"
+      e.target.textContent = "+ Добавить промокод"
     }
   });
 }
@@ -1006,23 +1073,89 @@ if (pickerBox) {
     inputField.value = datePicker.value;
   });
 }
-const accordions2 = document.querySelectorAll(".accordion");
+const reviewsBoxes = document.querySelectorAll(".reviews-modal .reviews-box");
 
-if (accordions2.length) {
-  let currentAccordion = accordions2[0];
-  accordions2.forEach(item => {
-    const accordionHeader = item.querySelector(".accordion-header");
-    const accordionContent = item.querySelector(".accordion-content");
-    accordionHeader.addEventListener("click", () => {
-      if (item !== currentAccordion) {
-        currentAccordion.querySelector(".accordion-content").classList.remove("show");
-        currentAccordion.querySelector(".accordion-header").classList.remove("active");
-        currentAccordion = item;
+if (reviewsBoxes) {
+  reviewsBoxes.forEach(item => {
+    item.addEventListener("click", () => {
+      reviewsBoxes.forEach(el => el.classList.remove("active"));
+      item.classList.add("active")
+    })
+  })
+}
+try {
+  const accordions2 = document.querySelectorAll(".accordion");
+
+  if (accordions2.length) {
+    let currentAccordion = accordions2[0];
+    accordions2.forEach(item => {
+      const accordionHeader = item.querySelector(".accordion-header");
+      const accordionContent = item.querySelector(".accordion-content");
+      if (accordionHeader) {
+        accordionHeader.addEventListener("click", () => {
+          if (item !== currentAccordion) {
+            currentAccordion.querySelector(".accordion-content").classList.remove("show");
+            currentAccordion.querySelector(".accordion-header").classList.remove("active");
+            currentAccordion = item;
+          }
+          accordionContent.classList.toggle("show");
+          accordionHeader.classList.toggle("active");
+        });
       }
-      accordionContent.classList.toggle("show");
-      accordionHeader.classList.toggle("active");
     });
-  });
-  currentAccordion.querySelector(".accordion-content").classList.add("show");
-  currentAccordion.querySelector(".accordion-header").classList.add("active");
+    if (accordions2.length) {
+      currentAccordion.querySelector(".accordion-content").classList.add("show");
+      currentAccordion.querySelector(".accordion-header").classList.add("active");
+    }
+  }
+} catch (error) {
+
+}
+
+
+const customSelect = document.querySelectorAll(".registration-florists .custom-select");
+if (customSelect) {
+  customSelect.forEach(select => {
+    const selectedBox = select.querySelector(".selected-box");
+    const selectedText = select.querySelector(".selected-text");
+    const selectOption = select.querySelector(".select-options");
+    const options = select.querySelectorAll(".option");
+    selectedBox.addEventListener("click", () => {
+      selectOption.classList.toggle("show");
+      selectedBox.classList.toggle('active');
+    })
+    options.forEach(option => {
+      option.addEventListener("click", () => {
+        selectedText.value = option.textContent;
+        options.forEach(el => el.classList.remove("active"))
+        option.classList.add("active");
+        selectOption.classList.remove("show");
+        selectedBox.classList.remove('active');
+      })
+    })
+    document.addEventListener("click", (e) => {
+      if (!select.contains(e.target)) {
+        selectOption.classList.remove("show");
+        selectedBox.classList.remove('active');
+      }
+    })
+  })
+}
+
+
+document.querySelectorAll('label').forEach(label => {
+  const input = label.querySelector('input[type="checkbox"], input[type="radio"]');
+  if (input) {
+    label.style.cursor = 'pointer';
+  }
+});
+
+const paymentContainer = document.querySelectorAll(".payment-container");
+if (paymentContainer) {
+  paymentContainer.forEach(item => {
+    item.addEventListener('click', () => {
+      paymentContainer.forEach(el => el.classList.remove('active'));
+      item.classList.add('active');
+    })
+  })
 }

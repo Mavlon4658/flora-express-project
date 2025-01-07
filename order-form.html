@@ -2284,7 +2284,7 @@
           <div class="order-form__sidebars">
             <div class="recipient-section">
               <div class="recipient-card">
-                <h3 class="card-title">Кому подарить цветы?</h3>
+                <h3 class="card-title">1. Кому подарить цветы?</h3>
                 <ul class="tabs">
                   <li class="tab-item active" data-tab="1">другой человек</li>
                   <li class="tab-item" data-tab="1">получу сам</li>
@@ -2303,7 +2303,7 @@
                     </div>
                     <div class="input-box">
                       <div class="social-media__profile">
-                        <label class="form-label no-flex">Адрес и пожелания по доставке или
+                        <label class="form-label no-flex">Адрес доставки и пожелания по доставке или
                           <div class="profil-box">
                             <span>профиль в
                               соцсетях</span>
@@ -2352,8 +2352,8 @@
                     <label class="sub-label">Без подписи доставка будет анонимной</label>
                   </div>
                   <div class="selects">
-                    <label class="form-label" for="foto">
-                      <input type="checkbox" id="foto">
+                    <label class="form-label" for="foto" style="cursor: auto;">
+                      <!-- <input type="checkbox" id="foto"> -->
                       Сделать фото
                     </label>
                     <label class="form-label" for="buket">
@@ -2480,7 +2480,7 @@
               <div class="reviews">
                 <h3 class="reviews-title">4 102 отзыва клиентов за 18 лет</h3>
                 <div class="reviews-cards">
-                  <div class="reviews-card">
+                  <div class="reviews-card flex-col">
                     <p class="reviews-desc">
                       При доставке заказа указала чтобы сделали фото получателя, но фото сделать не получилось (подруга
                       отказалась) и к заказу была подробнее...
@@ -2490,7 +2490,7 @@
                       <span class="comment-date">20 октября 2011, доставка в Москву</span>
                     </div>
                   </div>
-                  <div class="reviews-card">
+                  <div class="reviews-card flex-col">
                     <p class="reviews-desc">
                       При доставке заказа указала чтобы сделали фото получателя, но фото сделать не получилось (подруга
                       отказалась) и к заказу была подробнее...
@@ -2500,7 +2500,7 @@
                       <span class="comment-date">20 октября 2011, доставка в Москву</span>
                     </div>
                   </div>
-                  <div class="reviews-card">
+                  <div class="reviews-card flex-col">
                     <p class="reviews-desc">
                       При доставке заказа указала чтобы сделали фото получателя, но фото сделать не получилось (подруга
                       отказалась) и к заказу была подробнее...
@@ -2525,11 +2525,15 @@
                     <div class="bottom-box">
                       <div class="calculation">
                         <button class="minus">
-                          <img src="images/minus2.svg" alt="">
+                          <svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.2002 1H10.8002" stroke="#2E2E2E" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                         </button>
                         <input type="number" min="1" value="1">
                         <button class="plus">
-                          <img src="images/plus2.svg" alt="">
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.0002 1.19995V10.8M1.2002 5.99995H10.8002" stroke="#2E2E2E" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                         </button>
                       </div>
                       <h4 class="price">2 717 ₽</h4>
@@ -2559,7 +2563,7 @@
                         <span>Промокод</span>
                         <input id="promocode-input" type="text">
                       </div>
-                      <button class="add-promocode">+ Добавить</button>
+                      <button class="add-promocode">+ Добавить промокод</button>
                     </li>
                     <li>
                       <h5>Итого</h5>
@@ -2572,7 +2576,7 @@
                   </div>
                 </div>
               </div>
-              <div class="notification-box green">
+              <div class="notification-box green disabled">
                 <h4 class="notification-box__title">2 565-ый </h4>
                 <p class="notification-box__desc">
                   букет Весенний каприз был доставлен Оксане
